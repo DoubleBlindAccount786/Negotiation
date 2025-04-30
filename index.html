@@ -1,0 +1,1248 @@
+<!doctype html>
+ <html>
+ <head>
+ <meta charset="utf-8">
+ <title>c(ASP) Justification</title>
+ <style>
+.treemenu li { list-style: none; }
+.treemenu .toggler { cursor: pointer; }
+.treemenu .toggler:before { display: inline-block; margin-right: 2pt; }
+li.tree-empty > .toggler { opacity: 0.3; cursor: default; }
+li.tree-empty > .toggler:before { content: " "; }
+li.tree-closed > .toggler:before {
+    content: "";
+    height: 0;
+    width: 0;
+    border-color: transparent blue;
+    border-style: solid;
+    border-width: 0.25em 0 0.25em 0.5em;
+}
+li.tree-opened > .toggler:before {
+    content: "";
+    height: 0;
+    width: 0;
+    border-color: blue transparent ;
+    border-style: solid;
+    border-width: 0.5em 0.25em 0 0.25em;
+}
+</style>
+ 
+ <link rel="icon" href="logo.ico">
+ 
+ </head>
+ 
+ <body style="font-size:15px;background: #ECECEC; margin:80px; color:#333;">
+ 
+<h3>Query:</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?-&nbsp;&nbsp;query(Product,Maker,Price).<br>
+<br>
+<h3>Answer:</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product = b<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maker = d<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price = lowest<br>
+<br>
+
+<h3>Model:</h3>
+{ query(b,d,lowest),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buy(b,d,lowest),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accept_price(b,d,lowest),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maker(b,d),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;product(b),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;product_b,  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(product(b)),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(maker(b,d)),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maker(a,c),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;product(a),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;product_a,  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(product(a)),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(maker(a,c)),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(-maker(b,c)),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quality(b),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(quality(b)),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sale(b,d,lowest),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offer_price_b(b,d,lowest),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mail_list,  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(mail_list),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cash,  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(cash),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(-maker(a,d)),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;senior_customer,  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age_older_than_65,  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(age_older_than_65),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evidence(-student),  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bargain(b) }<br><br>
+<h3> Justification: <button onclick="expand()">Expand All</button><button onclick="depth(+1)">+1</button><button onclick="depth(-1)">-1</button><button onclick="collapse()">Collapse All</button></h3>
+
+
+ <ul class="tree">
+
+
+     <li> 
+     query(b,d,lowest) :-
+         <ul>
+         <li> 
+         buy(b,d,lowest) :-
+             <ul>
+             <li> 
+             accept_price(b,d,lowest) :-
+                 <ul>
+                 <li> 
+                 accept_price_2(b,d,lowest) :-
+                     <ul>
+                     <li> 
+                     maker(b,d) :-
+                         <ul>
+                         <li> 
+                         product(b) :-
+                             <ul>
+                             <li> 
+                             product_b :-
+                                 <ul>
+                                 <li> 
+                                 evidence(product(b)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             </ul> 
+                         </li> 
+                         <li> 
+                         evidence(maker(b,d)).
+                         </li> 
+                         </ul> 
+                     </li> 
+                     </ul> 
+                 </li> 
+                 <li> 
+                 not accept_price_1_check :-
+                     <ul>
+                     <li> 
+                     not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                     </li> 
+                     <li> 
+                     not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                         <ul>
+                         <li> 
+                         not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                             <ul>
+                             <li> 
+                             not product(Var3 | {Var3 \= a,Var3 \= b}),
+                             </li> 
+                             <li> 
+                             not product(Var3 | {Var3 \= a,Var3 \= b}).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                     </li> 
+                     <li> 
+                     not accept_price_1(a,c,Var9 | {Var9 \= lowest}) :-
+                         <ul>
+                         <li> 
+                         maker(a,c) :-
+                             <ul>
+                             <li> 
+                             product(a) :-
+                                 <ul>
+                                 <li> 
+                                 product_a :-
+                                     <ul>
+                                     <li> 
+                                     evidence(product(a)).
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             evidence(maker(a,c)).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     accept_price_1(a,c,lowest) :-
+                         <ul>
+                         <li> 
+                         proved(maker(a,c)).
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not sale(a,c,lowest) :-
+                         <ul>
+                         <li> 
+                         not offer_price_a(a,c,lowest) :-
+                             <ul>
+                             <li> 
+                             not offer_price_1(a,c,lowest),
+                             </li> 
+                             <li> 
+                             not offer_price_2(a,c,lowest),
+                             </li> 
+                             <li> 
+                             not offer_price_3(a,c,lowest),
+                             </li> 
+                             <li> 
+                             not offer_price_4(a,c,lowest).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                     </li> 
+                     <li> 
+                     not accept_price_1(b,c,Var12) :-
+                         <ul>
+                         <li> 
+                         not maker(b,c) :-
+                             <ul>
+                             <li> 
+                             proved(product(b)),
+                             </li> 
+                             <li> 
+                             not evidence(maker(b,c)),
+                             </li> 
+                             <li> 
+                             proved(not evidence(maker(b,c))),
+                             </li> 
+                             <li> 
+                             neg_maker(b,c) :-
+                                 <ul>
+                                 <li> 
+                                 evidence(-maker(b,c)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     </ul> 
+                 </li> 
+                 </ul> 
+             </li> 
+             <li> 
+             quality(b) :-
+                 <ul>
+                 <li> 
+                 evidence(quality(b)).
+                 </li> 
+                 </ul> 
+             </li> 
+             </ul> 
+         </li> 
+         <li> 
+         sale(b,d,lowest) :-
+             <ul>
+             <li> 
+             offer_price_b(b,d,lowest) :-
+                 <ul>
+                 <li> 
+                 offer_price_5(b,d,lowest) :-
+                     <ul>
+                     <li> 
+                     mail_list :-
+                         <ul>
+                         <li> 
+                         evidence(mail_list).
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     cash :-
+                         <ul>
+                         <li> 
+                         evidence(cash).
+                         </li> 
+                         </ul> 
+                     </li> 
+                     </ul> 
+                 </li> 
+                 <li> 
+                 not offer_price_1_check :-
+                     <ul>
+                     <li> 
+                     not offer_price_1(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= c,Var14 \= d},Var15 | {Var15 \= high}),
+                     </li> 
+                     <li> 
+                     offer_price_1(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= c,Var14 \= d},high),
+                     </li> 
+                     <li> 
+                     not buy(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= c,Var14 \= d},high) :-
+                         <ul>
+                         <li> 
+                         not accept_price(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= c,Var14 \= d},high) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= c,Var14 \= d},high),
+                             </li> 
+                             <li> 
+                             not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= c,Var14 \= d},high),
+                             </li> 
+                             <li> 
+                             not accept_price_3(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= c,Var14 \= d},high).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_1(Var13 | {Var13 \= a,Var13 \= b},c,Var16 | {Var16 \= high}),
+                     </li> 
+                     <li> 
+                     offer_price_1(Var13 | {Var13 \= a,Var13 \= b},c,high),
+                     </li> 
+                     <li> 
+                     not buy(Var13 | {Var13 \= a,Var13 \= b},c,high) :-
+                         <ul>
+                         <li> 
+                         not accept_price(Var13 | {Var13 \= a,Var13 \= b},c,high) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(Var13 | {Var13 \= a,Var13 \= b},c,high) :-
+                                 <ul>
+                                 <li> 
+                                 not maker(Var13 | {Var13 \= a,Var13 \= b},c) :-
+                                     <ul>
+                                     <li> 
+                                     not product(Var13 | {Var13 \= a,Var13 \= b}),
+                                     </li> 
+                                     <li> 
+                                     not product(Var13 | {Var13 \= a,Var13 \= b}).
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},c,high),
+                             </li> 
+                             <li> 
+                             not accept_price_3(Var13 | {Var13 \= a,Var13 \= b},c,high) :-
+                                 <ul>
+                                 <li> 
+                                 not maker(Var13 | {Var13 \= a,Var13 \= b},c) :-
+                                     <ul>
+                                     <li> 
+                                     not product(Var13 | {Var13 \= a,Var13 \= b}),
+                                     </li> 
+                                     <li> 
+                                     not product(Var13 | {Var13 \= a,Var13 \= b}).
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_1(Var13 | {Var13 \= a,Var13 \= b},d,Var17 | {Var17 \= high}),
+                     </li> 
+                     <li> 
+                     offer_price_1(Var13 | {Var13 \= a,Var13 \= b},d,high),
+                     </li> 
+                     <li> 
+                     not buy(Var13 | {Var13 \= a,Var13 \= b},d,high) :-
+                         <ul>
+                         <li> 
+                         not accept_price(Var13 | {Var13 \= a,Var13 \= b},d,high) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(Var13 | {Var13 \= a,Var13 \= b},d,high),
+                             </li> 
+                             <li> 
+                             not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,high) :-
+                                 <ul>
+                                 <li> 
+                                 not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                                     <ul>
+                                     <li> 
+                                     not product(Var13 | {Var13 \= a,Var13 \= b}),
+                                     </li> 
+                                     <li> 
+                                     not product(Var13 | {Var13 \= a,Var13 \= b}).
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_3(Var13 | {Var13 \= a,Var13 \= b},d,high).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_1(a,Var18 | {Var18 \= c,Var18 \= d},Var19 | {Var19 \= high}),
+                     </li> 
+                     <li> 
+                     offer_price_1(a,Var18 | {Var18 \= c,Var18 \= d},high),
+                     </li> 
+                     <li> 
+                     not buy(a,Var18 | {Var18 \= c,Var18 \= d},high) :-
+                         <ul>
+                         <li> 
+                         not accept_price(a,Var18 | {Var18 \= c,Var18 \= d},high) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(a,Var18 | {Var18 \= c,Var18 \= d},high),
+                             </li> 
+                             <li> 
+                             not accept_price_2(a,Var18 | {Var18 \= c,Var18 \= d},high),
+                             </li> 
+                             <li> 
+                             not accept_price_3(a,Var18 | {Var18 \= c,Var18 \= d},high).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_1(a,c,Var20 | {Var20 \= high}),
+                     </li> 
+                     <li> 
+                     offer_price_1(a,c,high),
+                     </li> 
+                     <li> 
+                     not buy(a,c,high) :-
+                         <ul>
+                         <li> 
+                         not accept_price(a,c,high) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(a,c,high) :-
+                                 <ul>
+                                 <li> 
+                                 proved(maker(a,c)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_2(a,c,high),
+                             </li> 
+                             <li> 
+                             not accept_price_3(a,c,high) :-
+                                 <ul>
+                                 <li> 
+                                 proved(maker(a,c)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_1(a,d,Var21 | {Var21 \= high}),
+                     </li> 
+                     <li> 
+                     offer_price_1(a,d,high),
+                     </li> 
+                     <li> 
+                     not buy(a,d,high) :-
+                         <ul>
+                         <li> 
+                         not accept_price(a,d,high) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(a,d,high),
+                             </li> 
+                             <li> 
+                             not accept_price_2(a,d,high) :-
+                                 <ul>
+                                 <li> 
+                                 not maker(a,d) :-
+                                     <ul>
+                                     <li> 
+                                     proved(product(a)),
+                                     </li> 
+                                     <li> 
+                                     not evidence(maker(a,d)),
+                                     </li> 
+                                     <li> 
+                                     proved(not evidence(maker(a,d))),
+                                     </li> 
+                                     <li> 
+                                     neg_maker(a,d) :-
+                                         <ul>
+                                         <li> 
+                                         evidence(-maker(a,d)).
+                                         </li> 
+                                         </ul> 
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_3(a,d,high).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_1(b,Var22 | {Var22 \= c,Var22 \= d},Var23 | {Var23 \= high}),
+                     </li> 
+                     <li> 
+                     offer_price_1(b,Var22 | {Var22 \= c,Var22 \= d},high),
+                     </li> 
+                     <li> 
+                     not buy(b,Var22 | {Var22 \= c,Var22 \= d},high) :-
+                         <ul>
+                         <li> 
+                         not accept_price(b,Var22 | {Var22 \= c,Var22 \= d},high) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(b,Var22 | {Var22 \= c,Var22 \= d},high),
+                             </li> 
+                             <li> 
+                             not accept_price_2(b,Var22 | {Var22 \= c,Var22 \= d},high),
+                             </li> 
+                             <li> 
+                             not accept_price_3(b,Var22 | {Var22 \= c,Var22 \= d},high).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_1(b,c,Var24 | {Var24 \= high}),
+                     </li> 
+                     <li> 
+                     offer_price_1(b,c,high),
+                     </li> 
+                     <li> 
+                     not buy(b,c,high) :-
+                         <ul>
+                         <li> 
+                         not accept_price(b,c,high) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(b,c,high) :-
+                                 <ul>
+                                 <li> 
+                                 proved(not maker(b,c)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_2(b,c,high),
+                             </li> 
+                             <li> 
+                             not accept_price_3(b,c,high) :-
+                                 <ul>
+                                 <li> 
+                                 proved(not maker(b,c)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_1(b,d,Var25 | {Var25 \= high}),
+                     </li> 
+                     <li> 
+                     offer_price_1(b,d,high),
+                     </li> 
+                     <li> 
+                     not buy(b,d,high) :-
+                         <ul>
+                         <li> 
+                         not accept_price(b,d,high) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(b,d,high),
+                             </li> 
+                             <li> 
+                             not accept_price_2(b,d,high) :-
+                                 <ul>
+                                 <li> 
+                                 proved(maker(b,d)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_3(b,d,high).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     </ul> 
+                 </li> 
+                 <li> 
+                 not offer_price_2_check :-
+                     <ul>
+                     <li> 
+                     not offer_price_2(Var26 | {Var26 \= a,Var26 \= b},Var27 | {Var27 \= c,Var27 \= d},Var28 | {Var28 \= low}),
+                     </li> 
+                     <li> 
+                     offer_price_2(Var26 | {Var26 \= a,Var26 \= b},Var27 | {Var27 \= c,Var27 \= d},low) :-
+                         <ul>
+                         <li> 
+                         senior_customer :-
+                             <ul>
+                             <li> 
+                             age_older_than_65 :-
+                                 <ul>
+                                 <li> 
+                                 evidence(age_older_than_65).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not buy(Var26 | {Var26 \= a,Var26 \= b},Var27 | {Var27 \= c,Var27 \= d},low) :-
+                         <ul>
+                         <li> 
+                         not accept_price(Var26 | {Var26 \= a,Var26 \= b},Var27 | {Var27 \= c,Var27 \= d},low) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(Var26 | {Var26 \= a,Var26 \= b},Var27 | {Var27 \= c,Var27 \= d},low),
+                             </li> 
+                             <li> 
+                             not accept_price_2(Var26 | {Var26 \= a,Var26 \= b},Var27 | {Var27 \= c,Var27 \= d},low),
+                             </li> 
+                             <li> 
+                             not accept_price_3(Var26 | {Var26 \= a,Var26 \= b},Var27 | {Var27 \= c,Var27 \= d},low).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_2(Var26 | {Var26 \= a,Var26 \= b},c,Var29 | {Var29 \= low}),
+                     </li> 
+                     <li> 
+                     offer_price_2(Var26 | {Var26 \= a,Var26 \= b},c,low) :-
+                         <ul>
+                         <li> 
+                         proved(senior_customer).
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not buy(Var26 | {Var26 \= a,Var26 \= b},c,low) :-
+                         <ul>
+                         <li> 
+                         not accept_price(Var26 | {Var26 \= a,Var26 \= b},c,low) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(Var26 | {Var26 \= a,Var26 \= b},c,low) :-
+                                 <ul>
+                                 <li> 
+                                 not maker(Var26 | {Var26 \= a,Var26 \= b},c) :-
+                                     <ul>
+                                     <li> 
+                                     not product(Var26 | {Var26 \= a,Var26 \= b}),
+                                     </li> 
+                                     <li> 
+                                     not product(Var26 | {Var26 \= a,Var26 \= b}).
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_2(Var26 | {Var26 \= a,Var26 \= b},c,low),
+                             </li> 
+                             <li> 
+                             not accept_price_3(Var26 | {Var26 \= a,Var26 \= b},c,low) :-
+                                 <ul>
+                                 <li> 
+                                 not maker(Var26 | {Var26 \= a,Var26 \= b},c) :-
+                                     <ul>
+                                     <li> 
+                                     not product(Var26 | {Var26 \= a,Var26 \= b}),
+                                     </li> 
+                                     <li> 
+                                     not product(Var26 | {Var26 \= a,Var26 \= b}).
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_2(Var26 | {Var26 \= a,Var26 \= b},d,Var30 | {Var30 \= low}),
+                     </li> 
+                     <li> 
+                     offer_price_2(Var26 | {Var26 \= a,Var26 \= b},d,low),
+                     </li> 
+                     <li> 
+                     not buy(Var26 | {Var26 \= a,Var26 \= b},d,low) :-
+                         <ul>
+                         <li> 
+                         not accept_price(Var26 | {Var26 \= a,Var26 \= b},d,low) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(Var26 | {Var26 \= a,Var26 \= b},d,low),
+                             </li> 
+                             <li> 
+                             not accept_price_2(Var26 | {Var26 \= a,Var26 \= b},d,low) :-
+                                 <ul>
+                                 <li> 
+                                 not maker(Var26 | {Var26 \= a,Var26 \= b},d) :-
+                                     <ul>
+                                     <li> 
+                                     not product(Var26 | {Var26 \= a,Var26 \= b}),
+                                     </li> 
+                                     <li> 
+                                     not product(Var26 | {Var26 \= a,Var26 \= b}).
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_3(Var26 | {Var26 \= a,Var26 \= b},d,low).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_2(a,Var31 | {Var31 \= c,Var31 \= d},Var32 | {Var32 \= low}),
+                     </li> 
+                     <li> 
+                     offer_price_2(a,Var31 | {Var31 \= c,Var31 \= d},low),
+                     </li> 
+                     <li> 
+                     not buy(a,Var31 | {Var31 \= c,Var31 \= d},low) :-
+                         <ul>
+                         <li> 
+                         not accept_price(a,Var31 | {Var31 \= c,Var31 \= d},low) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(a,Var31 | {Var31 \= c,Var31 \= d},low),
+                             </li> 
+                             <li> 
+                             not accept_price_2(a,Var31 | {Var31 \= c,Var31 \= d},low),
+                             </li> 
+                             <li> 
+                             not accept_price_3(a,Var31 | {Var31 \= c,Var31 \= d},low).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_2(a,c,Var33 | {Var33 \= low}),
+                     </li> 
+                     <li> 
+                     offer_price_2(a,c,low),
+                     </li> 
+                     <li> 
+                     not buy(a,c,low) :-
+                         <ul>
+                         <li> 
+                         not accept_price(a,c,low) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(a,c,low) :-
+                                 <ul>
+                                 <li> 
+                                 proved(maker(a,c)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_2(a,c,low),
+                             </li> 
+                             <li> 
+                             accept_price_3(a,c,low) :-
+                                 <ul>
+                                 <li> 
+                                 proved(maker(a,c)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             proved(not accept_price_1_check),
+                             </li> 
+                             <li> 
+                             accept_price_2_check :-
+                                 <ul>
+                                 <li> 
+                                 accept_price_2(b,d,lowest) :-
+                                     <ul>
+                                     <li> 
+                                     maker(b,d) :-
+                                         <ul>
+                                         <li> 
+                                         product(b) :-
+                                             <ul>
+                                             <li> 
+                                             proved(product_b).
+                                             </li> 
+                                             </ul> 
+                                         </li> 
+                                         <li> 
+                                         proved(evidence(maker(b,d))).
+                                         </li> 
+                                         </ul> 
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 <li> 
+                                 sale(b,d,lowest) :-
+                                     <ul>
+                                     <li> 
+                                     offer_price_b(b,d,lowest) :-
+                                         <ul>
+                                         <li> 
+                                         proved(offer_price_5(b,d,lowest)),
+                                         </li> 
+                                         <li> 
+                                         proved(not offer_price_1_check),
+                                         </li> 
+                                         <li> 
+                                         chs(not offer_price_2_check),
+                                         </li> 
+                                         <li> 
+                                         not offer_price_3_check :-
+                                             <ul>
+                                             <li> 
+                                             not offer_price_3(Var34,Var35,Var36 | {Var36 \= low}),
+                                             </li> 
+                                             <li> 
+                                             not offer_price_3(Var34,Var35,low) :-
+                                                 <ul>
+                                                 <li> 
+                                                 not student_customer :-
+                                                     <ul>
+                                                     <li> 
+                                                     not student :-
+                                                         <ul>
+                                                         <li> 
+                                                         not evidence(student),
+                                                         </li> 
+                                                         <li> 
+                                                         proved(not evidence(student)),
+                                                         </li> 
+                                                         <li> 
+                                                         neg_student :-
+                                                             <ul>
+                                                             <li> 
+                                                             evidence(-student).
+                                                             </li> 
+                                                             </ul> 
+                                                         </li> 
+                                                         </ul> 
+                                                     </li> 
+                                                     </ul> 
+                                                 </li> 
+                                                 </ul> 
+                                             </li> 
+                                             </ul> 
+                                         </li> 
+                                         <li> 
+                                         not offer_price_4_check :-
+                                             <ul>
+                                             <li> 
+                                             not offer_price_4(Var37 | {Var37 \= b},Var38,Var39 | {Var39 \= low}),
+                                             </li> 
+                                             <li> 
+                                             not offer_price_4(Var37 | {Var37 \= b},Var38,low) :-
+                                                 <ul>
+                                                 <li> 
+                                                 not bargain(Var37 | {Var37 \= b}).
+                                                 </li> 
+                                                 </ul> 
+                                             </li> 
+                                             <li> 
+                                             not offer_price_4(b,Var40 | {Var40 \= c,Var40 \= d},Var41 | {Var41 \= low}),
+                                             </li> 
+                                             <li> 
+                                             offer_price_4(b,Var40 | {Var40 \= c,Var40 \= d},low) :-
+                                                 <ul>
+                                                 <li> 
+                                                 bargain(b),
+                                                 </li> 
+                                                 <li> 
+                                                 proved(cash).
+                                                 </li> 
+                                                 </ul> 
+                                             </li> 
+                                             <li> 
+                                             not buy(b,Var40 | {Var40 \= c,Var40 \= d},low) :-
+                                                 <ul>
+                                                 <li> 
+                                                 not accept_price(b,Var40 | {Var40 \= c,Var40 \= d},low) :-
+                                                     <ul>
+                                                     <li> 
+                                                     not accept_price_1(b,Var40 | {Var40 \= c,Var40 \= d},low),
+                                                     </li> 
+                                                     <li> 
+                                                     not accept_price_2(b,Var40 | {Var40 \= c,Var40 \= d},low),
+                                                     </li> 
+                                                     <li> 
+                                                     not accept_price_3(b,Var40 | {Var40 \= c,Var40 \= d},low).
+                                                     </li> 
+                                                     </ul> 
+                                                 </li> 
+                                                 </ul> 
+                                             </li> 
+                                             <li> 
+                                             not offer_price_4(b,c,Var42 | {Var42 \= low}),
+                                             </li> 
+                                             <li> 
+                                             offer_price_4(b,c,low) :-
+                                                 <ul>
+                                                 <li> 
+                                                 proved(bargain(b)).
+                                                 </li> 
+                                                 </ul> 
+                                             </li> 
+                                             <li> 
+                                             not buy(b,c,low) :-
+                                                 <ul>
+                                                 <li> 
+                                                 not accept_price(b,c,low) :-
+                                                     <ul>
+                                                     <li> 
+                                                     not accept_price_1(b,c,low) :-
+                                                         <ul>
+                                                         <li> 
+                                                         proved(not maker(b,c)).
+                                                         </li> 
+                                                         </ul> 
+                                                     </li> 
+                                                     <li> 
+                                                     not accept_price_2(b,c,low),
+                                                     </li> 
+                                                     <li> 
+                                                     not accept_price_3(b,c,low) :-
+                                                         <ul>
+                                                         <li> 
+                                                         proved(not maker(b,c)).
+                                                         </li> 
+                                                         </ul> 
+                                                     </li> 
+                                                     </ul> 
+                                                 </li> 
+                                                 </ul> 
+                                             </li> 
+                                             <li> 
+                                             not offer_price_4(b,d,Var43 | {Var43 \= low}),
+                                             </li> 
+                                             <li> 
+                                             offer_price_4(b,d,low),
+                                             </li> 
+                                             <li> 
+                                             not buy(b,d,low) :-
+                                                 <ul>
+                                                 <li> 
+                                                 not accept_price(b,d,low) :-
+                                                     <ul>
+                                                     <li> 
+                                                     not accept_price_1(b,d,low),
+                                                     </li> 
+                                                     <li> 
+                                                     not accept_price_2(b,d,low) :-
+                                                         <ul>
+                                                         <li> 
+                                                         proved(maker(b,d)).
+                                                         </li> 
+                                                         </ul> 
+                                                     </li> 
+                                                     <li> 
+                                                     not accept_price_3(b,d,low).
+                                                     </li> 
+                                                     </ul> 
+                                                 </li> 
+                                                 </ul> 
+                                             </li> 
+                                             </ul> 
+                                         </li> 
+                                         </ul> 
+                                     </li> 
+                                     </ul> 
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_2(a,d,Var44 | {Var44 \= low}),
+                     </li> 
+                     <li> 
+                     offer_price_2(a,d,low),
+                     </li> 
+                     <li> 
+                     not buy(a,d,low) :-
+                         <ul>
+                         <li> 
+                         not accept_price(a,d,low) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(a,d,low),
+                             </li> 
+                             <li> 
+                             not accept_price_2(a,d,low) :-
+                                 <ul>
+                                 <li> 
+                                 proved(not maker(a,d)).
+                                 </li> 
+                                 </ul> 
+                             </li> 
+                             <li> 
+                             not accept_price_3(a,d,low).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_2(b,Var45 | {Var45 \= c,Var45 \= d},Var46 | {Var46 \= low}),
+                     </li> 
+                     <li> 
+                     offer_price_2(b,Var45 | {Var45 \= c,Var45 \= d},low),
+                     </li> 
+                     <li> 
+                     not buy(b,Var45 | {Var45 \= c,Var45 \= d},low) :-
+                         <ul>
+                         <li> 
+                         not accept_price(b,Var45 | {Var45 \= c,Var45 \= d},low) :-
+                             <ul>
+                             <li> 
+                             not accept_price_1(b,Var45 | {Var45 \= c,Var45 \= d},low),
+                             </li> 
+                             <li> 
+                             not accept_price_2(b,Var45 | {Var45 \= c,Var45 \= d},low),
+                             </li> 
+                             <li> 
+                             not accept_price_3(b,Var45 | {Var45 \= c,Var45 \= d},low).
+                             </li> 
+                             </ul> 
+                         </li> 
+                         </ul> 
+                     </li> 
+                     <li> 
+                     not offer_price_2(b,c,Var47 | {Var47 \= low}),
+                     </li> 
+                     <li> 
+                     offer_price_2(b,c,low),
+                     </li> 
+                     <li> 
+                     proved(not buy(b,c,low)),
+                     </li> 
+                     <li> 
+                     not offer_price_2(b,d,Var48 | {Var48 \= low}),
+                     </li> 
+                     <li> 
+                     offer_price_2(b,d,low),
+                     </li> 
+                     <li> 
+                     proved(not buy(b,d,low)).
+                     </li> 
+                     </ul> 
+                 </li> 
+                 <li> 
+                 proved(not offer_price_3_check),
+                 </li> 
+                 <li> 
+                 proved(not offer_price_4_check).
+                 </li> 
+                 </ul> 
+             </li> 
+             </ul> 
+         </li> 
+         </ul> 
+     </li> 
+     <li> 
+     global_constraint.
+     </li> 
+ </ul> 
+
+<script
+  src="https://code.jquery.com/jquery-1.11.2.min.js"
+  integrity="sha256-Ls0pXSlb7AYs7evhd+VLnWsZ/AqEHcXBeMZUycz/CcA="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    (function($){
+        $.fn.depth = function(options,depth) {
+            options = options || {};
+            options.delay = options.delay || 0;
+            
+            this.find("> li").each(function() {
+                e = $(this)
+                var subtree = e.find('> ul');
+
+                if (subtree.length > 0) {
+                    if (depth > 0) {
+                        e.addClass('tree-opened');
+                        e.removeClass('tree-closed');
+
+                        //subtree.slideDown(options.delay);
+                        subtree.show(options.delay);
+
+                        subtree.depth(options,depth-1);
+                    } else {
+                        e.removeClass('tree-opened');
+                        e.addClass('tree-closed');
+
+                        //subtree.slideUp(options.delay);
+                        subtree.hide(options.delay);
+
+                        subtree.collapse(options);
+                    }
+                }
+            });
+            return true;
+        }
+        
+        $.fn.expand = function(options,depth) {
+            options = options || {};
+            options.delay = options.delay || 0;
+            
+            this.find("> li").each(function() {
+                e = $(this)
+                var subtree = e.find('> ul');
+
+                if (subtree.length > 0) {
+                    e.addClass('tree-opened');
+                    e.removeClass('tree-closed');
+
+                    //subtree.slideDown(options.delay);
+                    subtree.show(options.delay);
+
+                    subtree.expand(options,depth+1);
+                }
+                //g_depth=Math.max(g_depth,depth);
+            });
+            return true;
+        }
+
+        $.fn.collapse = function(options) {
+            options = options || {};
+            options.delay = options.delay || 0;
+            
+            this.find("> li").each(function() {
+                e = $(this)
+                var subtree = e.find('> ul');
+
+                if (subtree.length > 0) {
+                    e.removeClass('tree-opened');
+                    e.addClass('tree-closed');
+
+                    subtree.slideUp(options.delay);
+                    subtree.hide(options.delay);
+
+                    subtree.collapse(options);
+                } 
+            });
+            return true;
+        }
+        
+        $.fn.treemenu = function(options) {
+            options = options || {};
+            options.delay = options.delay || 0;
+            options.openActive = options.openActive || false;
+            options.closeOther = options.closeOther || false;
+            options.activeSelector = options.activeSelector || ".active";
+
+            this.addClass("treemenu");
+
+            if (!options.nonroot) {
+                this.addClass("treemenu-root");
+            }
+
+            options.nonroot = true;
+
+            this.find("> li").each(function() {
+                e = $(this);
+                var subtree = e.find('> ul');
+                var button = e.find('.toggler').eq(0);
+
+                if(button.length == 0) {
+                    // create toggler
+                    var button = $('<span>');
+                    button.addClass('toggler');
+                    e.prepend(button);
+                }
+
+                if(subtree.length > 0) {
+                    subtree.hide();
+
+                    e.addClass('tree-closed');
+
+                    e.find(button).click(function() {
+                        var li = $(this).parent('li');
+
+                        if (options.closeOther && li.hasClass('tree-closed')) {
+                            var siblings = li.parent('ul').find("li:not(.tree-empty)");
+                            siblings.removeClass("tree-opened");
+                            siblings.addClass("tree-closed");
+                            siblings.removeClass(options.activeSelector);
+                            siblings.find('> ul').slideUp(options.delay);
+                        }
+
+                        li.find('> ul').slideToggle(options.delay);
+                        li.toggleClass('tree-opened');
+                        li.toggleClass('tree-closed');
+                        li.toggleClass(options.activeSelector);
+                    });
+
+                    $(this).find('> ul').treemenu(options);
+                } else {
+                    $(this).addClass('tree-empty');
+                }
+            });
+
+            if (options.openActive) {
+                var cls = this.attr("class");
+
+                this.find(options.activeSelector).each(function(){
+                    var el = $(this).parent();
+
+                    while (el.attr("class") !== cls) {
+                        el.find('> ul').show();
+                        if(el.prop("tagName") === 'UL') {
+                            el.show();
+                        } else if (el.prop("tagName") === 'LI') {
+                            el.removeClass('tree-closed');
+                            el.addClass("tree-opened");
+                            el.show();
+                        }
+
+                        el = el.parent();
+                    }
+                });
+            }
+
+            //this.expand({delay:0},0);
+            //max_depth = g_depth;
+            //this.collapse({delay:0});
+            //g_depth = 0;
+
+            return this;
+        }
+    })(jQuery);
+
+var g_depth = 0;
+var max_depth = 400
+
+function depth(step){
+    g_depth = g_depth + step;
+    g_depth = g_depth < 0 ? 0 : g_depth;
+    g_depth = g_depth > max_depth ? max_depth : g_depth;
+    $(".tree").depth({delay:0},g_depth);
+}
+
+function expand(){
+    g_depth = 0     
+    $(".tree").expand({delay:0},0);
+}
+
+function collapse(){
+    $(".tree").collapse({delay:0});
+    g_depth = 0;    
+}
+
+$(function(){
+    $(".tree").treemenu({delay:0}).openActive();
+});
+
+</script>
+
+
+
+ <div style='min-height: 400px'></div>
+
+</body>
+</html>
+

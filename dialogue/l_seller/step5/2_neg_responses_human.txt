@@ -1,0 +1,18 @@
+% QUERY:I would like to know if
+     Product is  a and
+     Maker is  c and
+     Price is  low and
+     there is no evidence that 'query' holds (for Product, Maker, and Price).
+
+	ANSWER:	1 (in 0.714 ms)
+
+JUSTIFICATION_TREE:
+The global constraints hold.
+
+MODEL:
+{ not query(a,c,low),  not evidence(-product(b)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+

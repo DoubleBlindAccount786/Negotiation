@@ -1,0 +1,319 @@
+% QUERY:I would like to know if
+     the proposal for product Product from maker Maker at price Price is acceptable.
+
+	ANSWER:	1 (in 103.419 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product b from maker d at price lowest is acceptable, because
+    there is evidence that product b exists, and
+    there is evidence of product b being made by d, and
+    there is evidence of b being of good quality, and
+    seller accepts selling product b from maker d at price lowest, because
+        the product b from maker d at price lowest is acceptable for Seller, because
+            buyer is subscribed to the mailing list, because
+                there is no evidence that there is evidence of buyer being subscribed to the mailing list, and
+                there is no evidence that there is evidence of buyer not being subscribed to the mailing list, and
+                there is no evidence that there is evidence of buyer not being subscribed to the mailing list, justified above, and
+                it is assumed that buyer is subscribed to the mailing list.
+            buyer pays in cash, because
+                there is no evidence that there is evidence of buyer paying in cash, and
+                there is no evidence that there is evidence of buyer not paying in cash, and
+                there is no evidence that there is evidence of buyer not paying in cash, justified above, and
+                it is assumed that buyer pays in cash.
+            there is no evidence that buyer accepts buying product Var3 not equal a, nor b from maker Var4 at price high, because
+                there is no evidence that there is evidence that product Var3 not equal a, nor b exists.
+            there is no evidence that buyer accepts buying product a from maker Var6 not equal c at price high, because
+                there is evidence that product a exists, and
+                there is no evidence that there is evidence of product a being made by Var6 not equal c.
+            there is no evidence that buyer accepts buying product a from maker c at price high, because
+                there is evidence that product a exists, justified above, and
+                there is evidence of product a being made by c, and
+                there is evidence of product a being made by c, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product a from maker c at price high.
+            there is no evidence that buyer accepts buying product b from maker Var9 not equal d at price high, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var9 not equal d.
+            there is no evidence that buyer accepts buying product b from maker d at price high, because
+                there is evidence of product b being made by d, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product b from maker d at price high.
+            there is no evidence that the customer is senior, because
+                there is no evidence that buyer is older than 65 years, because
+                    there is no evidence that there is evidence of buyer being older than 65 years, and
+                    there is no evidence that there is evidence of buyer being older than 65 years, justified above, and
+                    there is no evidence that there is evidence of buyer not being older than 65 years, and
+                    it is assumed that there is no evidence that buyer is older than 65 years.
+            there is no evidence that the customer is a student, because
+                there is no evidence that buyer is a student, because
+                    there is no evidence that there is evidence of buyer being a student, and
+                    there is no evidence that there is evidence of buyer being a student, justified above, and
+                    there is no evidence that there is evidence of buyer not being a student, and
+                    it is assumed that there is no evidence that buyer is a student.
+            there is no evidence that seller can bargain about the price of product Var18 not equal b, and
+            seller can bargain about the price of product b, and
+            buyer pays in cash, justified above, and
+            there is no evidence that buyer accepts buying product b from maker Var21 not equal d at price low, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var21 not equal d.
+            seller can bargain about the price of product b, justified above, and
+            there is no evidence that buyer accepts buying product b from maker d at price low, because
+                there is evidence of product b being made by d, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product b from maker d at price low.
+The global constraints hold.
+
+MODEL:
+{ query(b,d,lowest),  evidence(product(b)),  evidence(maker(b,d)),  evidence(quality(b)),  sale(b,d,lowest),  offer_price_b(b,d,lowest),  mail_list,  cash,  evidence(product(a)),  evidence(maker(a,c)),  bargain(b) }
+BINDINGS: 
+Product equal b 
+Maker equal d 
+Price equal lowest
+
+
+	ANSWER:	2 (in 108.718 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product b from maker d at price lowest is acceptable, because
+    there is evidence that product b exists, and
+    there is evidence of product b being made by d, and
+    there is evidence of b being of good quality, and
+    seller accepts selling product b from maker d at price lowest, because
+        the product b from maker d at price lowest is acceptable for Seller, because
+            buyer is subscribed to the mailing list, because
+                there is no evidence that there is evidence of buyer being subscribed to the mailing list, and
+                there is no evidence that there is evidence of buyer not being subscribed to the mailing list, and
+                there is no evidence that there is evidence of buyer not being subscribed to the mailing list, justified above, and
+                it is assumed that buyer is subscribed to the mailing list.
+            buyer pays in cash, because
+                there is no evidence that there is evidence of buyer paying in cash, and
+                there is no evidence that there is evidence of buyer not paying in cash, and
+                there is no evidence that there is evidence of buyer not paying in cash, justified above, and
+                it is assumed that buyer pays in cash.
+            there is no evidence that buyer accepts buying product Var3 not equal a, nor b from maker Var4 at price high, because
+                there is no evidence that there is evidence that product Var3 not equal a, nor b exists.
+            there is no evidence that buyer accepts buying product a from maker Var6 not equal c at price high, because
+                there is evidence that product a exists, and
+                there is no evidence that there is evidence of product a being made by Var6 not equal c.
+            there is no evidence that buyer accepts buying product a from maker c at price high, because
+                there is evidence that product a exists, justified above, and
+                there is evidence of product a being made by c, and
+                there is evidence of product a being made by c, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product a from maker c at price high.
+            there is no evidence that buyer accepts buying product b from maker Var9 not equal d at price high, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var9 not equal d.
+            there is no evidence that buyer accepts buying product b from maker d at price high, because
+                there is evidence of product b being made by d, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product b from maker d at price high.
+            there is no evidence that the customer is senior, because
+                there is no evidence that buyer is older than 65 years, because
+                    there is no evidence that there is evidence of buyer being older than 65 years, and
+                    there is no evidence that there is evidence of buyer being older than 65 years, justified above, and
+                    there is no evidence that there is evidence of buyer not being older than 65 years, and
+                    it is assumed that there is no evidence that buyer is older than 65 years.
+            the customer is a student, because
+                buyer is a student, because
+                    there is no evidence that there is evidence of buyer being a student, and
+                    there is no evidence that there is evidence of buyer not being a student, and
+                    there is no evidence that there is evidence of buyer not being a student, justified above, and
+                    it is assumed that buyer is a student.
+            there is no evidence that buyer accepts buying product Var15 not equal a, nor b from maker Var16 at price low, because
+                there is no evidence that there is evidence that product Var15 not equal a, nor b exists.
+            the customer is a student, justified above, and
+            there is no evidence that buyer accepts buying product a from maker Var18 not equal c at price low, because
+                there is evidence that product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by Var18 not equal c.
+            there is no evidence that buyer accepts buying product a from maker c at price low, because
+                there is evidence of product a being made by c, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product a from maker c at price low.
+            there is no evidence that buyer accepts buying product b from maker Var21 not equal d at price low, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var21 not equal d.
+            there is no evidence that buyer accepts buying product b from maker d at price low, because
+                there is evidence of product b being made by d, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product b from maker d at price low.
+            there is no evidence that seller can bargain about the price of product Var24 not equal b, and
+            seller can bargain about the price of product b, and
+            buyer pays in cash, justified above, and
+            there is no evidence that buyer accepts buying product b from maker Var27 not equal d at price low, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var27 not equal d.
+            seller can bargain about the price of product b, justified above, and
+            there is no evidence that buyer accepts buying product b from maker d at price low, justified above.
+The global constraints hold.
+
+MODEL:
+{ query(b,d,lowest),  evidence(product(b)),  evidence(maker(b,d)),  evidence(quality(b)),  sale(b,d,lowest),  offer_price_b(b,d,lowest),  mail_list,  cash,  evidence(product(a)),  evidence(maker(a,c)),  student_customer,  student,  bargain(b) }
+BINDINGS: 
+Product equal b 
+Maker equal d 
+Price equal lowest
+
+
+	ANSWER:	3 (in 120.58 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product b from maker d at price lowest is acceptable, because
+    there is evidence that product b exists, and
+    there is evidence of product b being made by d, and
+    there is evidence of b being of good quality, and
+    seller accepts selling product b from maker d at price lowest, because
+        the product b from maker d at price lowest is acceptable for Seller, because
+            buyer is subscribed to the mailing list, because
+                there is no evidence that there is evidence of buyer being subscribed to the mailing list, and
+                there is no evidence that there is evidence of buyer not being subscribed to the mailing list, and
+                there is no evidence that there is evidence of buyer not being subscribed to the mailing list, justified above, and
+                it is assumed that buyer is subscribed to the mailing list.
+            buyer pays in cash, because
+                there is no evidence that there is evidence of buyer paying in cash, and
+                there is no evidence that there is evidence of buyer not paying in cash, and
+                there is no evidence that there is evidence of buyer not paying in cash, justified above, and
+                it is assumed that buyer pays in cash.
+            there is no evidence that buyer accepts buying product Var3 not equal a, nor b from maker Var4 at price high, because
+                there is no evidence that there is evidence that product Var3 not equal a, nor b exists.
+            there is no evidence that buyer accepts buying product a from maker Var6 not equal c at price high, because
+                there is evidence that product a exists, and
+                there is no evidence that there is evidence of product a being made by Var6 not equal c.
+            there is no evidence that buyer accepts buying product a from maker c at price high, because
+                there is evidence that product a exists, justified above, and
+                there is evidence of product a being made by c, and
+                there is evidence of product a being made by c, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product a from maker c at price high.
+            there is no evidence that buyer accepts buying product b from maker Var9 not equal d at price high, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var9 not equal d.
+            there is no evidence that buyer accepts buying product b from maker d at price high, because
+                there is evidence of product b being made by d, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product b from maker d at price high.
+            the customer is senior, because
+                buyer is older than 65 years, because
+                    there is no evidence that there is evidence of buyer being older than 65 years, and
+                    there is no evidence that there is evidence of buyer not being older than 65 years, and
+                    there is no evidence that there is evidence of buyer not being older than 65 years, justified above, and
+                    it is assumed that buyer is older than 65 years.
+            there is no evidence that buyer accepts buying product Var12 not equal a, nor b from maker Var13 at price low, because
+                there is no evidence that there is evidence that product Var12 not equal a, nor b exists.
+            the customer is senior, justified above, and
+            there is no evidence that buyer accepts buying product a from maker Var15 not equal c at price low, because
+                there is evidence that product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by Var15 not equal c.
+            there is no evidence that buyer accepts buying product a from maker c at price low, because
+                there is evidence of product a being made by c, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product a from maker c at price low.
+            there is no evidence that buyer accepts buying product b from maker Var18 not equal d at price low, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var18 not equal d.
+            there is no evidence that buyer accepts buying product b from maker d at price low, because
+                there is evidence of product b being made by d, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product b from maker d at price low.
+            there is no evidence that the customer is a student, because
+                there is no evidence that buyer is a student, because
+                    there is no evidence that there is evidence of buyer being a student, and
+                    there is no evidence that there is evidence of buyer being a student, justified above, and
+                    there is no evidence that there is evidence of buyer not being a student, and
+                    it is assumed that there is no evidence that buyer is a student.
+            there is no evidence that seller can bargain about the price of product Var24 not equal b, and
+            seller can bargain about the price of product b, and
+            buyer pays in cash, justified above, and
+            there is no evidence that buyer accepts buying product b from maker Var27 not equal d at price low, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var27 not equal d.
+            seller can bargain about the price of product b, justified above, and
+            there is no evidence that buyer accepts buying product b from maker d at price low, justified above.
+The global constraints hold.
+
+MODEL:
+{ query(b,d,lowest),  evidence(product(b)),  evidence(maker(b,d)),  evidence(quality(b)),  sale(b,d,lowest),  offer_price_b(b,d,lowest),  mail_list,  cash,  evidence(product(a)),  evidence(maker(a,c)),  senior_customer,  age_older_than_65,  bargain(b) }
+BINDINGS: 
+Product equal b 
+Maker equal d 
+Price equal lowest
+
+
+	ANSWER:	4 (in 128.638 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product b from maker d at price lowest is acceptable, because
+    there is evidence that product b exists, and
+    there is evidence of product b being made by d, and
+    there is evidence of b being of good quality, and
+    seller accepts selling product b from maker d at price lowest, because
+        the product b from maker d at price lowest is acceptable for Seller, because
+            buyer is subscribed to the mailing list, because
+                there is no evidence that there is evidence of buyer being subscribed to the mailing list, and
+                there is no evidence that there is evidence of buyer not being subscribed to the mailing list, and
+                there is no evidence that there is evidence of buyer not being subscribed to the mailing list, justified above, and
+                it is assumed that buyer is subscribed to the mailing list.
+            buyer pays in cash, because
+                there is no evidence that there is evidence of buyer paying in cash, and
+                there is no evidence that there is evidence of buyer not paying in cash, and
+                there is no evidence that there is evidence of buyer not paying in cash, justified above, and
+                it is assumed that buyer pays in cash.
+            there is no evidence that buyer accepts buying product Var3 not equal a, nor b from maker Var4 at price high, because
+                there is no evidence that there is evidence that product Var3 not equal a, nor b exists.
+            there is no evidence that buyer accepts buying product a from maker Var6 not equal c at price high, because
+                there is evidence that product a exists, and
+                there is no evidence that there is evidence of product a being made by Var6 not equal c.
+            there is no evidence that buyer accepts buying product a from maker c at price high, because
+                there is evidence that product a exists, justified above, and
+                there is evidence of product a being made by c, and
+                there is evidence of product a being made by c, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product a from maker c at price high.
+            there is no evidence that buyer accepts buying product b from maker Var9 not equal d at price high, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var9 not equal d.
+            there is no evidence that buyer accepts buying product b from maker d at price high, because
+                there is evidence of product b being made by d, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product b from maker d at price high.
+            the customer is senior, because
+                buyer is older than 65 years, because
+                    there is no evidence that there is evidence of buyer being older than 65 years, and
+                    there is no evidence that there is evidence of buyer not being older than 65 years, and
+                    there is no evidence that there is evidence of buyer not being older than 65 years, justified above, and
+                    it is assumed that buyer is older than 65 years.
+            there is no evidence that buyer accepts buying product Var12 not equal a, nor b from maker Var13 at price low, because
+                there is no evidence that there is evidence that product Var12 not equal a, nor b exists.
+            the customer is senior, justified above, and
+            there is no evidence that buyer accepts buying product a from maker Var15 not equal c at price low, because
+                there is evidence that product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by Var15 not equal c.
+            there is no evidence that buyer accepts buying product a from maker c at price low, because
+                there is evidence of product a being made by c, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product a from maker c at price low.
+            there is no evidence that buyer accepts buying product b from maker Var18 not equal d at price low, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var18 not equal d.
+            there is no evidence that buyer accepts buying product b from maker d at price low, because
+                there is evidence of product b being made by d, justified above, and
+                it is assumed that there is no evidence that buyer accepts buying product b from maker d at price low.
+            the customer is a student, because
+                buyer is a student, because
+                    there is no evidence that there is evidence of buyer being a student, and
+                    there is no evidence that there is evidence of buyer not being a student, and
+                    there is no evidence that there is evidence of buyer not being a student, justified above, and
+                    it is assumed that buyer is a student.
+            there is no evidence that buyer accepts buying product Var21 not equal a, nor b from maker Var22 at price low, because
+                there is no evidence that there is evidence that product Var21 not equal a, nor b exists.
+            the customer is a student, justified above, and
+            there is no evidence that buyer accepts buying product a from maker Var24 not equal c at price low, because
+                there is evidence that product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by Var24 not equal c.
+            there is no evidence that buyer accepts buying product a from maker c at price low, justified above, and
+            there is no evidence that buyer accepts buying product b from maker Var27 not equal d at price low, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var27 not equal d.
+            there is no evidence that buyer accepts buying product b from maker d at price low, justified above, and
+            there is no evidence that seller can bargain about the price of product Var30 not equal b, and
+            seller can bargain about the price of product b, and
+            buyer pays in cash, justified above, and
+            there is no evidence that buyer accepts buying product b from maker Var33 not equal d at price low, because
+                there is evidence that product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by Var33 not equal d.
+            seller can bargain about the price of product b, justified above.
+The global constraints hold.
+
+MODEL:
+{ query(b,d,lowest),  evidence(product(b)),  evidence(maker(b,d)),  evidence(quality(b)),  sale(b,d,lowest),  offer_price_b(b,d,lowest),  mail_list,  cash,  evidence(product(a)),  evidence(maker(a,c)),  senior_customer,  age_older_than_65,  student_customer,  student,  bargain(b) }
+BINDINGS: 
+Product equal b 
+Maker equal d 
+Price equal lowest
+

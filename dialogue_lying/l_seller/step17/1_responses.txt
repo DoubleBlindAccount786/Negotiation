@@ -1,0 +1,20 @@
+% QUERY:?- query(Product,Maker,Price).
+
+	ANSWER:	1 (in 86.549 ms)
+
+JUSTIFICATION_TREE:
+query(b,Maker | {Maker \= d},high) :-
+    sale(b,Maker | {Maker \= d},high) :-
+        offer_price_b(b,Maker | {Maker \= d},high) :-
+            offer_price_1(b,Maker | {Maker \= d},high).
+        not asked(buy(b,Maker | {Maker \= d},high)),
+        not asked(-buy(b,Maker | {Maker \= d},high)).
+global_constraint.
+
+MODEL:
+{ query(b,Maker | {Maker \= d},high),  sale(b,Maker | {Maker \= d},high),  offer_price_b(b,Maker | {Maker \= d},high),  offer_price_1(b,Maker | {Maker \= d},high),  not asked(buy(b,Maker | {Maker \= d},high)),  not asked(-buy(b,Maker | {Maker \= d},high)) }
+BINDINGS: 
+Product = b 
+Maker \= d 
+Price = high
+

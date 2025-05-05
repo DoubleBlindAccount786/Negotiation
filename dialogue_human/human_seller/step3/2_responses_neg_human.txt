@@ -1,0 +1,27 @@
+% QUERY:I would like to know if
+     Product is  a and
+     Maker is  c and
+     Price is  high and
+     there is no evidence that the proposal for product Product from maker Maker at price Price is acceptable.
+
+	ANSWER:	1 (in 1.891 ms)
+
+JUSTIFICATION_TREE:
+there is no evidence that the proposal for product a from maker c at price high is acceptable, because
+    there is no evidence that buyer accepts buying product a from maker c at price high, because
+        there is no evidence that buyer can buy the product a from maker c at price high, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            the product a is made by c, justified above.
+The global constraints hold.
+
+MODEL:
+{ maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal high
+

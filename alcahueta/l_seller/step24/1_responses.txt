@@ -1,0 +1,1225 @@
+% QUERY:?- query(Product,Maker,Price).
+
+	ANSWER:	1 (in 38.398 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                not maker(a,c) :-
+                    not product(a) :-
+                        not product_a :-
+                            not evidence(product(a)),
+                            proved(not evidence(product(a))),
+                            neg_product_a :-
+                                not evidence(-product(a)),
+                                chs(not product_a).
+                    proved(not product(a)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(not maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                not maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    proved(product(b)),
+                    proved(not evidence(maker(b,d))),
+                    neg_maker(b,d) :-
+                        not evidence(-maker(b,d)),
+                        chs(not maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9) :-
+                    proved(not maker(a,c)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19) :-
+                    not maker(a,d) :-
+                        proved(not product(a)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22) :-
+                    proved(not maker(b,d)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+
+
+	ANSWER:	2 (in 40.332 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                not maker(a,c) :-
+                    not product(a) :-
+                        not product_a :-
+                            not evidence(product(a)),
+                            proved(not evidence(product(a))),
+                            neg_product_a :-
+                                not evidence(-product(a)),
+                                chs(not product_a).
+                    proved(not product(a)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(not maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    not neg_maker(b,d) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,d)),
+                        proved(not evidence(-maker(b,d))),
+                        chs(maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9) :-
+                    proved(not maker(a,c)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19) :-
+                    not maker(a,d) :-
+                        proved(not product(a)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22 | {Var22 \= lowest}) :-
+                    proved(maker(b,d)).
+                accept_price_2(b,d,lowest) :-
+                    proved(maker(b,d)).
+                not sale(b,d,lowest) :-
+                    not asked(sale(b,d,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,d)),
+                    proved(not asked(sale(b,d,lowest))),
+                    neg_sale(b,d,lowest) :-
+                        not asked(-sale(b,d,lowest)),
+                        chs(not sale(b,d,lowest)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  maker(b,d),  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+
+
+	ANSWER:	3 (in 58.891 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                not maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,c)),
+                    proved(product(a)),
+                    proved(not evidence(maker(a,c))),
+                    neg_maker(a,c) :-
+                        not evidence(-maker(a,c)),
+                        chs(not maker(a,c)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(not maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                not maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    proved(product(b)),
+                    proved(not evidence(maker(b,d))),
+                    neg_maker(b,d) :-
+                        not evidence(-maker(b,d)),
+                        chs(not maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9) :-
+                    proved(not maker(a,c)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19) :-
+                    not maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(maker(a,d)),
+                        proved(not evidence(maker(a,d))),
+                        neg_maker(a,d) :-
+                            not evidence(-maker(a,d)),
+                            chs(not maker(a,d)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22) :-
+                    proved(not maker(b,d)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  product(a),  product_a,  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+
+
+	ANSWER:	4 (in 17.971 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                not maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,c)),
+                    proved(product(a)),
+                    proved(not evidence(maker(a,c))),
+                    neg_maker(a,c) :-
+                        not evidence(-maker(a,c)),
+                        chs(not maker(a,c)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(not maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                not maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    proved(product(b)),
+                    proved(not evidence(maker(b,d))),
+                    neg_maker(b,d) :-
+                        not evidence(-maker(b,d)),
+                        chs(not maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9) :-
+                    proved(not maker(a,c)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19 | {Var19 \= lowest}) :-
+                    maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(maker(a,d)),
+                        not neg_maker(a,d) :-
+                            proved(product(a)),
+                            not evidence(-maker(a,d)),
+                            proved(not evidence(-maker(a,d))),
+                            chs(maker(a,d)).
+                accept_price_2(a,d,lowest) :-
+                    proved(maker(a,d)).
+                not sale(a,d,lowest) :-
+                    not asked(sale(a,d,lowest)),
+                    proved(product(a)),
+                    proved(maker(a,d)),
+                    proved(not asked(sale(a,d,lowest))),
+                    neg_sale(a,d,lowest) :-
+                        not asked(-sale(a,d,lowest)),
+                        chs(not sale(a,d,lowest)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22) :-
+                    proved(not maker(b,d)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  product(a),  product_a,  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  maker(a,d),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+
+
+	ANSWER:	5 (in 46.89 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                not maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,c)),
+                    proved(product(a)),
+                    proved(not evidence(maker(a,c))),
+                    neg_maker(a,c) :-
+                        not evidence(-maker(a,c)),
+                        chs(not maker(a,c)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(not maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    not neg_maker(b,d) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,d)),
+                        proved(not evidence(-maker(b,d))),
+                        chs(maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9) :-
+                    proved(not maker(a,c)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19) :-
+                    not maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(maker(a,d)),
+                        proved(not evidence(maker(a,d))),
+                        neg_maker(a,d) :-
+                            not evidence(-maker(a,d)),
+                            chs(not maker(a,d)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22 | {Var22 \= lowest}) :-
+                    proved(maker(b,d)).
+                accept_price_2(b,d,lowest) :-
+                    proved(maker(b,d)).
+                not sale(b,d,lowest) :-
+                    not asked(sale(b,d,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,d)),
+                    proved(not asked(sale(b,d,lowest))),
+                    neg_sale(b,d,lowest) :-
+                        not asked(-sale(b,d,lowest)),
+                        chs(not sale(b,d,lowest)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  product(a),  product_a,  maker(b,d),  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+
+
+	ANSWER:	6 (in 23.337 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                not maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,c)),
+                    proved(product(a)),
+                    proved(not evidence(maker(a,c))),
+                    neg_maker(a,c) :-
+                        not evidence(-maker(a,c)),
+                        chs(not maker(a,c)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(not maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    not neg_maker(b,d) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,d)),
+                        proved(not evidence(-maker(b,d))),
+                        chs(maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9) :-
+                    proved(not maker(a,c)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19 | {Var19 \= lowest}) :-
+                    maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(maker(a,d)),
+                        not neg_maker(a,d) :-
+                            proved(product(a)),
+                            not evidence(-maker(a,d)),
+                            proved(not evidence(-maker(a,d))),
+                            chs(maker(a,d)).
+                accept_price_2(a,d,lowest) :-
+                    proved(maker(a,d)).
+                not sale(a,d,lowest) :-
+                    not asked(sale(a,d,lowest)),
+                    proved(product(a)),
+                    proved(maker(a,d)),
+                    proved(not asked(sale(a,d,lowest))),
+                    neg_sale(a,d,lowest) :-
+                        not asked(-sale(a,d,lowest)),
+                        chs(not sale(a,d,lowest)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22 | {Var22 \= lowest}) :-
+                    proved(maker(b,d)).
+                accept_price_2(b,d,lowest) :-
+                    proved(maker(b,d)).
+                not sale(b,d,lowest) :-
+                    not asked(sale(b,d,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,d)),
+                    proved(not asked(sale(b,d,lowest))),
+                    neg_sale(b,d,lowest) :-
+                        not asked(-sale(b,d,lowest)),
+                        chs(not sale(b,d,lowest)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  product(a),  product_a,  maker(b,d),  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  maker(a,d),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+
+
+	ANSWER:	7 (in 64.803 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,c)),
+                    not neg_maker(a,c) :-
+                        proved(product(a)),
+                        not evidence(-maker(a,c)),
+                        proved(not evidence(-maker(a,c))),
+                        chs(maker(a,c)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                not maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    proved(product(b)),
+                    proved(not evidence(maker(b,d))),
+                    neg_maker(b,d) :-
+                        not evidence(-maker(b,d)),
+                        chs(not maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9 | {Var9 \= lowest}) :-
+                    proved(maker(a,c)).
+                accept_price_1(a,c,lowest) :-
+                    proved(maker(a,c)).
+                not sale(a,c,lowest) :-
+                    not asked(sale(a,c,lowest)),
+                    proved(product(a)),
+                    proved(maker(a,c)),
+                    proved(not asked(sale(a,c,lowest))),
+                    neg_sale(a,c,lowest) :-
+                        not asked(-sale(a,c,lowest)),
+                        chs(not sale(a,c,lowest)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19) :-
+                    not maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(maker(a,d)),
+                        proved(not evidence(maker(a,d))),
+                        neg_maker(a,d) :-
+                            not evidence(-maker(a,d)),
+                            chs(not maker(a,d)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22) :-
+                    proved(not maker(b,d)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  maker(a,c),  product(a),  product_a,  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+
+
+	ANSWER:	8 (in 18.916 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,c)),
+                    not neg_maker(a,c) :-
+                        proved(product(a)),
+                        not evidence(-maker(a,c)),
+                        proved(not evidence(-maker(a,c))),
+                        chs(maker(a,c)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                not maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    proved(product(b)),
+                    proved(not evidence(maker(b,d))),
+                    neg_maker(b,d) :-
+                        not evidence(-maker(b,d)),
+                        chs(not maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9 | {Var9 \= lowest}) :-
+                    proved(maker(a,c)).
+                accept_price_1(a,c,lowest) :-
+                    proved(maker(a,c)).
+                not sale(a,c,lowest) :-
+                    not asked(sale(a,c,lowest)),
+                    proved(product(a)),
+                    proved(maker(a,c)),
+                    proved(not asked(sale(a,c,lowest))),
+                    neg_sale(a,c,lowest) :-
+                        not asked(-sale(a,c,lowest)),
+                        chs(not sale(a,c,lowest)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19 | {Var19 \= lowest}) :-
+                    maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(maker(a,d)),
+                        not neg_maker(a,d) :-
+                            proved(product(a)),
+                            not evidence(-maker(a,d)),
+                            proved(not evidence(-maker(a,d))),
+                            chs(maker(a,d)).
+                accept_price_2(a,d,lowest) :-
+                    proved(maker(a,d)).
+                not sale(a,d,lowest) :-
+                    not asked(sale(a,d,lowest)),
+                    proved(product(a)),
+                    proved(maker(a,d)),
+                    proved(not asked(sale(a,d,lowest))),
+                    neg_sale(a,d,lowest) :-
+                        not asked(-sale(a,d,lowest)),
+                        chs(not sale(a,d,lowest)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22) :-
+                    proved(not maker(b,d)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  maker(a,c),  product(a),  product_a,  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  maker(a,d),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+
+
+	ANSWER:	9 (in 52.061 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,c)),
+                    not neg_maker(a,c) :-
+                        proved(product(a)),
+                        not evidence(-maker(a,c)),
+                        proved(not evidence(-maker(a,c))),
+                        chs(maker(a,c)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    not neg_maker(b,d) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,d)),
+                        proved(not evidence(-maker(b,d))),
+                        chs(maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9 | {Var9 \= lowest}) :-
+                    proved(maker(a,c)).
+                accept_price_1(a,c,lowest) :-
+                    proved(maker(a,c)).
+                not sale(a,c,lowest) :-
+                    not asked(sale(a,c,lowest)),
+                    proved(product(a)),
+                    proved(maker(a,c)),
+                    proved(not asked(sale(a,c,lowest))),
+                    neg_sale(a,c,lowest) :-
+                        not asked(-sale(a,c,lowest)),
+                        chs(not sale(a,c,lowest)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19) :-
+                    not maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(maker(a,d)),
+                        proved(not evidence(maker(a,d))),
+                        neg_maker(a,d) :-
+                            not evidence(-maker(a,d)),
+                            chs(not maker(a,d)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22 | {Var22 \= lowest}) :-
+                    proved(maker(b,d)).
+                accept_price_2(b,d,lowest) :-
+                    proved(maker(b,d)).
+                not sale(b,d,lowest) :-
+                    not asked(sale(b,d,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,d)),
+                    proved(not asked(sale(b,d,lowest))),
+                    neg_sale(b,d,lowest) :-
+                        not asked(-sale(b,d,lowest)),
+                        chs(not sale(b,d,lowest)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  maker(a,c),  product(a),  product_a,  maker(b,d),  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+
+
+	ANSWER:	10 (in 23.651 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,low) :-
+    evidence(age_older_than_65),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,c)),
+                    not neg_maker(a,c) :-
+                        proved(product(a)),
+                        not evidence(-maker(a,c)),
+                        proved(not evidence(-maker(a,c))),
+                        chs(maker(a,c)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    not neg_maker(b,d) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,d)),
+                        proved(not evidence(-maker(b,d))),
+                        chs(maker(b,d)).
+            not accept_price_3(b,d,high).
+    buy(b,c,low) :-
+        accept_price(b,c,low) :-
+            accept_price_3(b,c,low) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9 | {Var9 \= lowest}) :-
+                    proved(maker(a,c)).
+                accept_price_1(a,c,lowest) :-
+                    proved(maker(a,c)).
+                not sale(a,c,lowest) :-
+                    not asked(sale(a,c,lowest)),
+                    proved(product(a)),
+                    proved(maker(a,c)),
+                    proved(not asked(sale(a,c,lowest))),
+                    neg_sale(a,c,lowest) :-
+                        not asked(-sale(a,c,lowest)),
+                        chs(not sale(a,c,lowest)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12 | {Var12 \= lowest}) :-
+                    proved(maker(b,c)).
+                accept_price_1(b,c,lowest) :-
+                    proved(maker(b,c)).
+                not sale(b,c,lowest) :-
+                    not asked(sale(b,c,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,c)),
+                    proved(not asked(sale(b,c,lowest))),
+                    neg_sale(b,c,lowest) :-
+                        not asked(-sale(b,c,lowest)),
+                        chs(not sale(b,c,lowest)).
+            not accept_price_2_check :-
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},Var14 | {Var14 \= d},Var15),
+                not accept_price_2(Var13 | {Var13 \= a,Var13 \= b},d,Var16) :-
+                    not maker(Var13 | {Var13 \= a,Var13 \= b},d) :-
+                        not product(Var13 | {Var13 \= a,Var13 \= b}),
+                        not product(Var13 | {Var13 \= a,Var13 \= b}).
+                not accept_price_2(a,Var17 | {Var17 \= d},Var18),
+                not accept_price_2(a,d,Var19 | {Var19 \= lowest}) :-
+                    maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(maker(a,d)),
+                        not neg_maker(a,d) :-
+                            proved(product(a)),
+                            not evidence(-maker(a,d)),
+                            proved(not evidence(-maker(a,d))),
+                            chs(maker(a,d)).
+                accept_price_2(a,d,lowest) :-
+                    proved(maker(a,d)).
+                not sale(a,d,lowest) :-
+                    not asked(sale(a,d,lowest)),
+                    proved(product(a)),
+                    proved(maker(a,d)),
+                    proved(not asked(sale(a,d,lowest))),
+                    neg_sale(a,d,lowest) :-
+                        not asked(-sale(a,d,lowest)),
+                        chs(not sale(a,d,lowest)).
+                not accept_price_2(b,Var20 | {Var20 \= d},Var21),
+                not accept_price_2(b,d,Var22 | {Var22 \= lowest}) :-
+                    proved(maker(b,d)).
+                accept_price_2(b,d,lowest) :-
+                    proved(maker(b,d)).
+                not sale(b,d,lowest) :-
+                    not asked(sale(b,d,lowest)),
+                    proved(product(b)),
+                    proved(maker(b,d)),
+                    proved(not asked(sale(b,d,lowest))),
+                    neg_sale(b,d,lowest) :-
+                        not asked(-sale(b,d,lowest)),
+                        chs(not sale(b,d,lowest)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,low),  evidence(age_older_than_65),  maker(a,c),  product(a),  product_a,  maker(b,d),  product(b),  product_b,  buy(b,c,low),  accept_price(b,c,low),  maker(b,c),  maker(a,d),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low
+

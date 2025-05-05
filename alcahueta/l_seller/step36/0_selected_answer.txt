@@ -1,0 +1,101 @@
+	ANSWER:	15
+
+JUSTIFICATION_TREE:
+query(b,c,lowest) :-
+    evidence(mail_list),
+    evidence(cash),
+    evidence(age_older_than_65),
+    evidence(-student),
+    not buy(a,c,high) :-
+        not accept_price(a,c,high) :-
+            not accept_price_1(a,c,high) :-
+                maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,c)),
+                    not neg_maker(a,c) :-
+                        proved(product(a)),
+                        not evidence(-maker(a,c)),
+                        proved(not evidence(-maker(a,c))),
+                        chs(maker(a,c)).
+            not accept_price_2(a,c,high),
+            not accept_price_3(a,c,high) :-
+                proved(maker(a,c)).
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    not neg_maker(b,d) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,d)),
+                        proved(not evidence(-maker(b,d))),
+                        chs(maker(b,d)).
+            not accept_price_3(b,d,high).
+    not buy(a,c,low) :-
+        not accept_price(a,c,low) :-
+            not accept_price_1(a,c,low) :-
+                proved(maker(a,c)).
+            not accept_price_2(a,c,low),
+            accept_price_3(a,c,low) :-
+                proved(maker(a,c)).
+            accept_price_1_check :-
+                accept_price_1(a,c,lowest) :-
+                    maker(a,c) :-
+                        product(a) :-
+                            proved(product_a).
+                        proved(not evidence(maker(a,c))),
+                        proved(not neg_maker(a,c)).
+                sale(a,c,lowest) :-
+                    proved(product(a)),
+                    not asked(sale(a,c,lowest)),
+                    not neg_sale(a,c,lowest) :-
+                        not asked(-sale(a,c,lowest)),
+                        proved(product(a)),
+                        proved(maker(a,c)),
+                        proved(not asked(-sale(a,c,lowest))),
+                        chs(sale(a,c,lowest)).
+    not buy(b,d,low) :-
+        not accept_price(b,d,low) :-
+            not accept_price_1(b,d,low),
+            not accept_price_2(b,d,low) :-
+                proved(maker(b,d)).
+            not accept_price_3(b,d,low).
+    buy(b,c,lowest) :-
+        accept_price(b,c,lowest) :-
+            accept_price_1(b,c,lowest) :-
+                maker(b,c) :-
+                    proved(product(b)),
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,c,lowest),  evidence(mail_list),  evidence(cash),  evidence(age_older_than_65),  evidence(-student),  maker(a,c),  product(a),  product_a,  maker(b,d),  product(b),  product_b,  sale(a,c,lowest),  buy(b,c,lowest),  accept_price(b,c,lowest),  maker(b,c),  quality(b) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = lowest

@@ -1,0 +1,42 @@
+% QUERY:I would like to know if
+     there is evidence that product Product exists and
+     Maker is  c and
+     Price is  lowest and
+     there is no evidence that the proposal for product Product from maker Maker at price Price is acceptable.
+
+	ANSWER:	1 (in 2.044 ms)
+
+JUSTIFICATION_TREE:
+there is evidence that product a exists, and
+there is no evidence that the proposal for product a from maker c at price lowest is acceptable, because
+    there is evidence that product a exists, justified above, and
+    there is evidence of product a being made by c, and
+    there is evidence of a being of good quality, and
+    there is no evidence that seller accepts selling product a from maker c at price lowest, because
+        there is no evidence that the product a from maker c at price lowest is acceptable for Seller.
+The global constraints hold.
+
+MODEL:
+{ evidence(product(a)),  evidence(maker(a,c)),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal lowest
+
+
+	ANSWER:	2 (in 1.994 ms)
+
+JUSTIFICATION_TREE:
+there is evidence that product b exists, and
+there is no evidence that the proposal for product b from maker c at price lowest is acceptable, because
+    there is evidence that product b exists, justified above, and
+    there is no evidence that there is evidence of product b being made by c.
+The global constraints hold.
+
+MODEL:
+{ evidence(product(b)) }
+BINDINGS: 
+Product equal b 
+Maker equal c 
+Price equal lowest
+

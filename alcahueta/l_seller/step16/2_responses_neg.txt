@@ -1,0 +1,305 @@
+% QUERY:?- Product = b,Price = high,not query(Product,Maker,Price).
+
+	ANSWER:	1 (in 0.555 ms)
+
+JUSTIFICATION_TREE:
+not query(b,Maker | {Maker \= c,Maker \= d},high) :-
+    not buy(b,Maker | {Maker \= c,Maker \= d},high) :-
+        not accept_price(b,Maker | {Maker \= c,Maker \= d},high) :-
+            not accept_price_1(b,Maker | {Maker \= c,Maker \= d},high),
+            not accept_price_2(b,Maker | {Maker \= c,Maker \= d},high),
+            not accept_price_3(b,Maker | {Maker \= c,Maker \= d},high).
+global_constraint.
+
+MODEL:
+{  }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker \= c,Maker \= d
+
+
+	ANSWER:	2 (in 1.661 ms)
+
+JUSTIFICATION_TREE:
+not query(b,d,high) :-
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                not maker(b,d) :-
+                    not product(b) :-
+                        not product_b :-
+                            not evidence(product(b)),
+                            proved(not evidence(product(b))),
+                            neg_product_b :-
+                                not evidence(-product(b)),
+                                chs(not product_b).
+                    proved(not product(b)).
+            not accept_price_3(b,d,high).
+global_constraint.
+
+MODEL:
+{  }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker = d
+
+
+	ANSWER:	3 (in 2.676 ms)
+
+JUSTIFICATION_TREE:
+not query(b,d,high) :-
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                not maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    proved(product(b)),
+                    proved(not evidence(maker(b,d))),
+                    neg_maker(b,d) :-
+                        not evidence(-maker(b,d)),
+                        chs(not maker(b,d)).
+            not accept_price_3(b,d,high).
+global_constraint.
+
+MODEL:
+{ product(b),  product_b }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker = d
+
+
+	ANSWER:	4 (in 2.062 ms)
+
+JUSTIFICATION_TREE:
+not query(b,d,high) :-
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                not maker(b,d) :-
+                    not product(b) :-
+                        not product_b :-
+                            not evidence(product(b)),
+                            proved(not evidence(product(b))),
+                            neg_product_b :-
+                                not evidence(-product(b)),
+                                chs(not product_b).
+                    proved(not product(b)).
+            not accept_price_3(b,d,high).
+global_constraint.
+
+MODEL:
+{  }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker = d
+
+
+	ANSWER:	5 (in 2.726 ms)
+
+JUSTIFICATION_TREE:
+not query(b,d,high) :-
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                not maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    proved(product(b)),
+                    proved(not evidence(maker(b,d))),
+                    neg_maker(b,d) :-
+                        not evidence(-maker(b,d)),
+                        chs(not maker(b,d)).
+            not accept_price_3(b,d,high).
+global_constraint.
+
+MODEL:
+{ product(b),  product_b }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker = d
+
+
+	ANSWER:	6 (in 3.723 ms)
+
+JUSTIFICATION_TREE:
+not query(b,d,high) :-
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    not neg_maker(b,d) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,d)),
+                        proved(not evidence(-maker(b,d))),
+                        chs(maker(b,d)).
+            not accept_price_3(b,d,high).
+global_constraint.
+
+MODEL:
+{ maker(b,d),  product(b),  product_b }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker = d
+
+
+	ANSWER:	7 (in 3.499 ms)
+
+JUSTIFICATION_TREE:
+not query(b,d,high) :-
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,d)),
+                    not neg_maker(b,d) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,d)),
+                        proved(not evidence(-maker(b,d))),
+                        chs(maker(b,d)).
+            not accept_price_3(b,d,high).
+global_constraint.
+
+MODEL:
+{ maker(b,d),  product(b),  product_b }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker = d
+
+
+	ANSWER:	8 (in 7.682 ms)
+
+JUSTIFICATION_TREE:
+not query(b,c,high) :-
+    not buy(b,c,high) :-
+        not accept_price(b,c,high) :-
+            not accept_price_1(b,c,high) :-
+                not maker(b,c) :-
+                    not product(b) :-
+                        not product_b :-
+                            not evidence(product(b)),
+                            proved(not evidence(product(b))),
+                            neg_product_b :-
+                                not evidence(-product(b)),
+                                chs(not product_b).
+                    proved(not product(b)).
+            not accept_price_2(b,c,high),
+            not accept_price_3(b,c,high) :-
+                proved(not maker(b,c)).
+global_constraint.
+
+MODEL:
+{  }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker = c
+
+
+	ANSWER:	9 (in 3.07 ms)
+
+JUSTIFICATION_TREE:
+not query(b,c,high) :-
+    not buy(b,c,high) :-
+        not accept_price(b,c,high) :-
+            not accept_price_1(b,c,high) :-
+                not maker(b,c) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,c)),
+                    proved(product(b)),
+                    proved(not evidence(maker(b,c))),
+                    neg_maker(b,c) :-
+                        not evidence(-maker(b,c)),
+                        chs(not maker(b,c)).
+            not accept_price_2(b,c,high),
+            not accept_price_3(b,c,high) :-
+                proved(not maker(b,c)).
+global_constraint.
+
+MODEL:
+{ product(b),  product_b }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker = c
+
+
+	ANSWER:	10 (in 3.905 ms)
+
+JUSTIFICATION_TREE:
+not query(b,c,high) :-
+    not buy(b,c,high) :-
+        not accept_price(b,c,high) :-
+            not accept_price_1(b,c,high) :-
+                maker(b,c) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+            not accept_price_2(b,c,high),
+            not accept_price_3(b,c,high) :-
+                proved(maker(b,c)).
+global_constraint.
+
+MODEL:
+{ maker(b,c),  product(b),  product_b }
+BINDINGS: 
+Product = b 
+Price = high 
+Maker = c
+

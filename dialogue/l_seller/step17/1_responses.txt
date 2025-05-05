@@ -1,0 +1,19 @@
+% QUERY:?- query(Product,Maker,Price).
+
+	ANSWER:	1 (in 0.284 ms)
+
+JUSTIFICATION_TREE:
+query(a,Maker,high) :-
+    sale(a,Maker,high) :-
+        offer_price_a(a,Maker,high) :-
+            offer_price_1(a,Maker,high).
+        not asked(buy(a,Maker,high)),
+        not asked(-buy(a,Maker,high)).
+global_constraint.
+
+MODEL:
+{ query(a,Maker,high),  sale(a,Maker,high),  offer_price_a(a,Maker,high),  offer_price_1(a,Maker,high),  not asked(buy(a,Maker,high)),  not asked(-buy(a,Maker,high)) }
+BINDINGS: 
+Product = a 
+Price = high
+

@@ -1,0 +1,19 @@
+% QUERY:?- Product = b,Maker = d,Price = lowest,not query(Product,Maker,Price).
+
+	ANSWER:	1 (in 0.807 ms)
+
+JUSTIFICATION_TREE:
+not query(b,d,lowest) :-
+    not evidence(mail_list) :-
+        not lie :-
+            neg_lie :-
+                chs(not lie).
+global_constraint.
+
+MODEL:
+{ not query(b,d,lowest),  not evidence(mail_list),  not lie,  neg_lie }
+BINDINGS: 
+Product = b 
+Maker = d 
+Price = lowest
+

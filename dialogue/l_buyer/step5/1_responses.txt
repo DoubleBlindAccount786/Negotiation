@@ -1,0 +1,63 @@
+% QUERY:?- query(Product,Maker,Price).
+
+	ANSWER:	1 (in 17.482 ms)
+
+JUSTIFICATION_TREE:
+query(a,d,lowest) :-
+    buy(a,d,lowest) :-
+        accept_price(a,d,lowest) :-
+            accept_price_2(a,d,lowest) :-
+                maker(a,d) :-
+                    product(a) :-
+                        product_a :-
+                            evidence(product(a)).
+                    not evidence(maker(a,d)),
+                    not neg_maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(-maker(a,d)),
+                        proved(not evidence(-maker(a,d))),
+                        chs(maker(a,d)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9 | {Var9 \= lowest}) :-
+                    maker(a,c) :-
+                        proved(product(a)),
+                        evidence(maker(a,c)).
+                accept_price_1(a,c,lowest) :-
+                    proved(maker(a,c)).
+                not sale(a,c,lowest) :-
+                    not asked(sale(a,c,lowest)),
+                    proved(product(a)),
+                    proved(maker(a,c)),
+                    proved(not asked(sale(a,c,lowest))),
+                    neg_sale(a,c,lowest) :-
+                        asked(-sale(a,c,lowest)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12) :-
+                    not maker(b,c) :-
+                        product(b) :-
+                            product_b :-
+                                evidence(product(b)).
+                        not evidence(maker(b,c)),
+                        proved(product(b)),
+                        proved(not evidence(maker(b,c))),
+                        neg_maker(b,c) :-
+                            evidence(-maker(b,c)).
+        quality(a) :-
+            evidence(quality(a)).
+        not asked(sale(a,d,lowest)),
+        not asked(-sale(a,d,lowest)).
+global_constraint.
+
+MODEL:
+{ query(a,d,lowest),  buy(a,d,lowest),  accept_price(a,d,lowest),  accept_price_2(a,d,lowest),  maker(a,d),  product(a),  product_a,  evidence(product(a)),  not evidence(maker(a,d)),  not neg_maker(a,d),  not evidence(-maker(a,d)),  not accept_price_1_check,  not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),  not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6),  not maker(Var3 | {Var3 \= a,Var3 \= b},c),  not product(Var3 | {Var3 \= a,Var3 \= b}),  not accept_price_1(a,Var7 | {Var7 \= c},Var8),  not accept_price_1(a,c,Var9 | {Var9 \= lowest}),  maker(a,c),  evidence(maker(a,c)),  accept_price_1(a,c,lowest),  not sale(a,c,lowest),  not asked(sale(a,c,lowest)),  neg_sale(a,c,lowest),  asked(-sale(a,c,lowest)),  not accept_price_1(b,Var10 | {Var10 \= c},Var11),  not accept_price_1(b,c,Var12),  not maker(b,c),  product(b),  product_b,  evidence(product(b)),  not evidence(maker(b,c)),  neg_maker(b,c),  evidence(-maker(b,c)),  quality(a),  evidence(quality(a)),  not asked(sale(a,d,lowest)),  not asked(-sale(a,d,lowest)) }
+BINDINGS: 
+Product = a 
+Maker = d 
+Price = lowest
+

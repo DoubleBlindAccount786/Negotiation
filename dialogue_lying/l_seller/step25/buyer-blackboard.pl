@@ -1,0 +1,23 @@
+% Step 5
+evidence(product(b)).
+
+% Step 7
+evidence(maker(b,d)).
+
+% Step 9
+evidence(product(a)).
+evidence(maker(a,c)).
+evidence(-maker(b,c)).
+evidence(-maker(a,d)).
+evidence(quality(a)).
+% asked(-sale(a,c,lowest)).
+
+% Step 11
+% asked(-sale(b,d,lowest)).
+
+% Step 13 (new proposals)
+asked(-sale(b,c,lowest)).
+
+% Step 25
+evidence(quality(b)).
+asked(-sale(a,c,lowest)).

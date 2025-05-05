@@ -1,0 +1,640 @@
+% QUERY:I would like to know if
+     the proposal for product Product from maker Maker at price Price is acceptable.
+
+	ANSWER:	1 (in 22.262 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            there is no evidence that the product b is made by c, because
+                there is no evidence that the product b exists, because
+                    there is no evidence that there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b exists, justified above, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        it is assumed that there is no evidence that there is a product b.
+                there is no evidence that the product b exists, justified above.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            there is no evidence that the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                there is no evidence that there is evidence of product a being made by d, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                it is assumed that there is no evidence that the product a is made by d.
+            there is no evidence that the product b is made by d, because
+                there is no evidence that the product b exists, justified above.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+
+
+	ANSWER:	2 (in 17.604 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            there is no evidence that the product b is made by c, because
+                there is no evidence that the product b exists, because
+                    there is no evidence that there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b exists, justified above, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        it is assumed that there is no evidence that there is a product b.
+                there is no evidence that the product b exists, justified above.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                there is no evidence that there is evidence of product a not being made by d, justified above, and
+                it is assumed that the product a is made by d.
+            the product a is made by d, justified above, and
+            there is no evidence that seller accepts selling product a from maker d at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by d, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product a from maker d at price lowest.
+            there is no evidence that the product b is made by d, because
+                there is no evidence that the product b exists, justified above.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  maker(a,d),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+
+
+	ANSWER:	3 (in 32.85 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            there is no evidence that the product b is made by c, because
+                the product b exists, because
+                    there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        there is no evidence that there is evidence that product b does not exist, justified above, and
+                        it is assumed that there is a product b.
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by c, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                it is assumed that there is no evidence that the product b is made by c.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            there is no evidence that the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                there is no evidence that there is evidence of product a being made by d, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                it is assumed that there is no evidence that the product a is made by d.
+            there is no evidence that the product b is made by d, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by d, and
+                there is no evidence that there is evidence of product b being made by d, justified above, and
+                there is no evidence that there is evidence of product b not being made by d, and
+                it is assumed that there is no evidence that the product b is made by d.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  product(b),  product_b,  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+
+
+	ANSWER:	4 (in 17.833 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            there is no evidence that the product b is made by c, because
+                the product b exists, because
+                    there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        there is no evidence that there is evidence that product b does not exist, justified above, and
+                        it is assumed that there is a product b.
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by c, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                it is assumed that there is no evidence that the product b is made by c.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            there is no evidence that the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                there is no evidence that there is evidence of product a being made by d, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                it is assumed that there is no evidence that the product a is made by d.
+            the product b is made by d, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by d, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b not being made by d, and
+                there is no evidence that there is evidence of product b not being made by d, justified above, and
+                it is assumed that the product b is made by d.
+            the product b is made by d, justified above, and
+            there is no evidence that seller accepts selling product b from maker d at price lowest, because
+                the product b exists, justified above, and
+                the product b is made by d, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product b from maker d at price lowest.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  product(b),  product_b,  maker(b,d),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+
+
+	ANSWER:	5 (in 26.819 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            there is no evidence that the product b is made by c, because
+                the product b exists, because
+                    there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        there is no evidence that there is evidence that product b does not exist, justified above, and
+                        it is assumed that there is a product b.
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by c, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                it is assumed that there is no evidence that the product b is made by c.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                there is no evidence that there is evidence of product a not being made by d, justified above, and
+                it is assumed that the product a is made by d.
+            the product a is made by d, justified above, and
+            there is no evidence that seller accepts selling product a from maker d at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by d, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product a from maker d at price lowest.
+            there is no evidence that the product b is made by d, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by d, and
+                there is no evidence that there is evidence of product b being made by d, justified above, and
+                there is no evidence that there is evidence of product b not being made by d, and
+                it is assumed that there is no evidence that the product b is made by d.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  product(b),  product_b,  maker(a,d),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+
+
+	ANSWER:	6 (in 17.636 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            there is no evidence that the product b is made by c, because
+                the product b exists, because
+                    there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        there is no evidence that there is evidence that product b does not exist, justified above, and
+                        it is assumed that there is a product b.
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by c, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                it is assumed that there is no evidence that the product b is made by c.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                there is no evidence that there is evidence of product a not being made by d, justified above, and
+                it is assumed that the product a is made by d.
+            the product a is made by d, justified above, and
+            there is no evidence that seller accepts selling product a from maker d at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by d, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product a from maker d at price lowest.
+            the product b is made by d, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by d, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b not being made by d, and
+                there is no evidence that there is evidence of product b not being made by d, justified above, and
+                it is assumed that the product b is made by d.
+            the product b is made by d, justified above, and
+            there is no evidence that seller accepts selling product b from maker d at price lowest, because
+                the product b exists, justified above, and
+                the product b is made by d, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product b from maker d at price lowest.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  product(b),  product_b,  maker(a,d),  maker(b,d),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+
+
+	ANSWER:	7 (in 37.109 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            the product b is made by c, because
+                the product b exists, because
+                    there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        there is no evidence that there is evidence that product b does not exist, justified above, and
+                        it is assumed that there is a product b.
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                there is no evidence that there is evidence of product b not being made by c, justified above, and
+                it is assumed that the product b is made by c.
+            the product b is made by c, justified above, and
+            there is no evidence that seller accepts selling product b from maker c at price lowest, because
+                the product b exists, justified above, and
+                the product b is made by c, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product b from maker c at price lowest.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            there is no evidence that the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                there is no evidence that there is evidence of product a being made by d, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                it is assumed that there is no evidence that the product a is made by d.
+            there is no evidence that the product b is made by d, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by d, and
+                there is no evidence that there is evidence of product b being made by d, justified above, and
+                there is no evidence that there is evidence of product b not being made by d, and
+                it is assumed that there is no evidence that the product b is made by d.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  maker(b,c),  product(b),  product_b,  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+
+
+	ANSWER:	8 (in 17.608 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            the product b is made by c, because
+                the product b exists, because
+                    there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        there is no evidence that there is evidence that product b does not exist, justified above, and
+                        it is assumed that there is a product b.
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                there is no evidence that there is evidence of product b not being made by c, justified above, and
+                it is assumed that the product b is made by c.
+            the product b is made by c, justified above, and
+            there is no evidence that seller accepts selling product b from maker c at price lowest, because
+                the product b exists, justified above, and
+                the product b is made by c, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product b from maker c at price lowest.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            there is no evidence that the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                there is no evidence that there is evidence of product a being made by d, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                it is assumed that there is no evidence that the product a is made by d.
+            the product b is made by d, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by d, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b not being made by d, and
+                there is no evidence that there is evidence of product b not being made by d, justified above, and
+                it is assumed that the product b is made by d.
+            the product b is made by d, justified above, and
+            there is no evidence that seller accepts selling product b from maker d at price lowest, because
+                the product b exists, justified above, and
+                the product b is made by d, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product b from maker d at price lowest.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  maker(b,c),  product(b),  product_b,  maker(b,d),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+
+
+	ANSWER:	9 (in 25.792 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            the product b is made by c, because
+                the product b exists, because
+                    there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        there is no evidence that there is evidence that product b does not exist, justified above, and
+                        it is assumed that there is a product b.
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                there is no evidence that there is evidence of product b not being made by c, justified above, and
+                it is assumed that the product b is made by c.
+            the product b is made by c, justified above, and
+            there is no evidence that seller accepts selling product b from maker c at price lowest, because
+                the product b exists, justified above, and
+                the product b is made by c, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product b from maker c at price lowest.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                there is no evidence that there is evidence of product a not being made by d, justified above, and
+                it is assumed that the product a is made by d.
+            the product a is made by d, justified above, and
+            there is no evidence that seller accepts selling product a from maker d at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by d, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product a from maker d at price lowest.
+            there is no evidence that the product b is made by d, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by d, and
+                there is no evidence that there is evidence of product b being made by d, justified above, and
+                there is no evidence that there is evidence of product b not being made by d, and
+                it is assumed that there is no evidence that the product b is made by d.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  maker(b,c),  product(b),  product_b,  maker(a,d),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+
+
+	ANSWER:	10 (in 18.524 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    there is evidence of buyer being older than 65 years, and
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            the product b is made by c, because
+                the product b exists, because
+                    there is a product b, because
+                        there is no evidence that there is evidence that product b exists, and
+                        there is no evidence that there is evidence that product b does not exist, and
+                        there is no evidence that there is evidence that product b does not exist, justified above, and
+                        it is assumed that there is a product b.
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                there is no evidence that there is evidence of product b not being made by c, justified above, and
+                it is assumed that the product b is made by c.
+            the product b is made by c, justified above, and
+            there is no evidence that seller accepts selling product b from maker c at price lowest, because
+                the product b exists, justified above, and
+                the product b is made by c, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product b from maker c at price lowest.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a not being made by d, and
+                there is no evidence that there is evidence of product a not being made by d, justified above, and
+                it is assumed that the product a is made by d.
+            the product a is made by d, justified above, and
+            there is no evidence that seller accepts selling product a from maker d at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by d, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product a from maker d at price lowest.
+            the product b is made by d, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by d, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b not being made by d, and
+                there is no evidence that there is evidence of product b not being made by d, justified above, and
+                it is assumed that the product b is made by d.
+            the product b is made by d, justified above, and
+            there is no evidence that seller accepts selling product b from maker d at price lowest, because
+                the product b exists, justified above, and
+                the product b is made by d, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product b from maker d at price lowest.
+        the product a is of good quality, because
+            there is evidence of a being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  evidence(age_older_than_65),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  maker(b,c),  product(b),  product_b,  maker(a,d),  maker(b,d),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+

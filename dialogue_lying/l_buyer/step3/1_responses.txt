@@ -1,0 +1,43 @@
+% QUERY:?- query(Product,Maker,Price).
+
+	ANSWER:	1 (in 9.075 ms)
+
+JUSTIFICATION_TREE:
+query(b,c,lowest) :-
+    buy(b,c,lowest) :-
+        accept_price(b,c,lowest) :-
+            accept_price_1(b,c,lowest) :-
+                maker(b,c) :-
+                    product(b) :-
+                        product_b :-
+                            not evidence(product(b)),
+                            not neg_product_b :-
+                                not evidence(-product(b)),
+                                proved(not evidence(-product(b))),
+                                chs(product_b).
+                    not evidence(maker(b,c)),
+                    not neg_maker(b,c) :-
+                        proved(product(b)),
+                        not evidence(-maker(b,c)),
+                        proved(not evidence(-maker(b,c))),
+                        chs(maker(b,c)).
+                not lie :-
+                    neg_lie :-
+                        chs(not lie).
+        quality(b) :-
+            not evidence(quality(b)),
+            not neg_quality(b) :-
+                not evidence(-quality(b)),
+                proved(not evidence(-quality(b))),
+                chs(quality(b)).
+        not asked(sale(b,c,lowest)),
+        not asked(-sale(b,c,lowest)).
+global_constraint.
+
+MODEL:
+{ query(b,c,lowest),  buy(b,c,lowest),  accept_price(b,c,lowest),  accept_price_1(b,c,lowest),  maker(b,c),  product(b),  product_b,  not evidence(product(b)),  not neg_product_b,  not evidence(-product(b)),  not evidence(maker(b,c)),  not neg_maker(b,c),  not evidence(-maker(b,c)),  not lie,  neg_lie,  quality(b),  not evidence(quality(b)),  not neg_quality(b),  not evidence(-quality(b)),  not asked(sale(b,c,lowest)),  not asked(-sale(b,c,lowest)) }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = lowest
+

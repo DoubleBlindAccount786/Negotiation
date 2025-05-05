@@ -1,0 +1,16 @@
+% QUERY:?- Product = a,Maker = d,Price = lowest,not query(Product,Maker,Price).
+
+	ANSWER:	1 (in 1.121 ms)
+
+JUSTIFICATION_TREE:
+not query(a,d,lowest) :-
+    not evidence(maker(a,d)).
+global_constraint.
+
+MODEL:
+{ not query(a,d,lowest),  not evidence(maker(a,d)) }
+BINDINGS: 
+Product = a 
+Maker = d 
+Price = lowest
+

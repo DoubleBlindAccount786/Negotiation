@@ -1,0 +1,13 @@
+	ANSWER:	5
+
+JUSTIFICATION_TREE:
+not query(b,c,low) :-
+    not evidence(-product(a)).
+global_constraint.
+
+MODEL:
+{  }
+BINDINGS: 
+Product = b 
+Maker = c 
+Price = low

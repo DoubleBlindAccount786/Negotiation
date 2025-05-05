@@ -1,0 +1,16 @@
+	ANSWER:	1
+
+JUSTIFICATION_TREE:
+not query(b,d,lowest) :-
+    not evidence(mail_list) :-
+        not lie :-
+            neg_lie :-
+                chs(not lie).
+global_constraint.
+
+MODEL:
+{ not query(b,d,lowest),  not evidence(mail_list),  not lie,  neg_lie }
+BINDINGS: 
+Product = b 
+Maker = d 
+Price = lowest

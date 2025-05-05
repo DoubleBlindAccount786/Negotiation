@@ -1,0 +1,25 @@
+	ANSWER:	1
+
+JUSTIFICATION_TREE:
+query(a,c,lowest) :-
+    buy(a,c,lowest) :-
+        accept_price(a,c,lowest) :-
+            accept_price_1(a,c,lowest) :-
+                maker(a,c) :-
+                    product(a) :-
+                        product_a :-
+                            evidence(product(a)).
+                    evidence(maker(a,c)).
+        quality(a) :-
+            evidence(quality(a)).
+        not asked(sale(a,c,lowest)),
+        not asked(-sale(a,c,lowest)).
+global_constraint.
+
+MODEL:
+{ query(a,c,lowest),  buy(a,c,lowest),  accept_price(a,c,lowest),  accept_price_1(a,c,lowest),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  quality(a),  evidence(quality(a)),  not asked(sale(a,c,lowest)),  not asked(-sale(a,c,lowest)) }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = lowest
+

@@ -1,0 +1,23 @@
+% QUERY:?- Product = a,Price = high,not query(Product,Maker,Price).
+
+	ANSWER:	1 (in 0.771 ms)
+
+JUSTIFICATION_TREE:
+not query(a,Maker | {Maker \= c,Maker \= d},high) :-
+    not buy(a,Maker | {Maker \= c,Maker \= d},high) :-
+        not accept_price(a,Maker | {Maker \= c,Maker \= d},high) :-
+            not accept_price_1(a,Maker | {Maker \= c,Maker \= d},high),
+            not accept_price_2(a,Maker | {Maker \= c,Maker \= d},high),
+            not accept_price_3(a,Maker | {Maker \= c,Maker \= d},high),
+            not accept_price_4(a,Maker | {Maker \= c,Maker \= d},high),
+            not accept_price_5(a,Maker | {Maker \= c,Maker \= d},high),
+            not accept_price_6(a,Maker | {Maker \= c,Maker \= d},high).
+global_constraint.
+
+MODEL:
+{ not query(a,Maker | {Maker \= c,Maker \= d},high),  not buy(a,Maker | {Maker \= c,Maker \= d},high),  not accept_price(a,Maker | {Maker \= c,Maker \= d},high),  not accept_price_1(a,Maker | {Maker \= c,Maker \= d},high),  not accept_price_2(a,Maker | {Maker \= c,Maker \= d},high),  not accept_price_3(a,Maker | {Maker \= c,Maker \= d},high) }
+BINDINGS: 
+Product = a 
+Price = high 
+Maker \= c,Maker \= d
+

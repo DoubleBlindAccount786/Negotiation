@@ -1,0 +1,910 @@
+% QUERY:?- query(Product,Maker,Price).
+
+	ANSWER:	1 (in 296.379 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_2(a,c,low) :-
+                senior_customer :-
+                    age_older_than_65 :-
+                        evidence(age_older_than_65).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high) :-
+                    not accept_price(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high) :-
+                        not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_2(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_3(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_4(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_5(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_6(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high).
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6 | {Var6 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},c,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                    not accept_price(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                        not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_2(Var3 | {Var3 \= a,Var3 \= b},c,high),
+                        not accept_price_3(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_4(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_5(Var3 | {Var3 \= a,Var3 \= b},c,high),
+                        not accept_price_6(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},d,Var7 | {Var7 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                    not accept_price(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                        not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                        not accept_price_2(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},d) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_3(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                        not accept_price_4(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                        not accept_price_5(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},d) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_6(Var3 | {Var3 \= a,Var3 \= b},d,high).
+                not offer_price_1(a,Var8 | {Var8 \= c,Var8 \= d},Var9 | {Var9 \= high}),
+                offer_price_1(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                not buy(a,Var8 | {Var8 \= c,Var8 \= d},high) :-
+                    not accept_price(a,Var8 | {Var8 \= c,Var8 \= d},high) :-
+                        not accept_price_1(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_2(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_3(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_4(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_5(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_6(a,Var8 | {Var8 \= c,Var8 \= d},high).
+                not offer_price_1(a,c,Var10 | {Var10 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not accept_price(a,c,high) :-
+                        not accept_price_1(a,c,high) :-
+                            maker(a,c) :-
+                                product(a) :-
+                                    product_a :-
+                                        evidence(product(a)).
+                                evidence(maker(a,c)).
+                        not accept_price_2(a,c,high),
+                        not accept_price_3(a,c,high) :-
+                            proved(maker(a,c)).
+                        not accept_price_4(a,c,high) :-
+                            proved(maker(a,c)).
+                        not accept_price_5(a,c,high),
+                        not accept_price_6(a,c,high) :-
+                            proved(maker(a,c)).
+                not offer_price_1(a,d,Var11 | {Var11 \= high}),
+                offer_price_1(a,d,high),
+                not buy(a,d,high) :-
+                    not accept_price(a,d,high) :-
+                        not accept_price_1(a,d,high),
+                        not accept_price_2(a,d,high) :-
+                            not maker(a,d) :-
+                                proved(product(a)),
+                                not evidence(maker(a,d)),
+                                proved(not evidence(maker(a,d))),
+                                neg_maker(a,d) :-
+                                    evidence(-maker(a,d)).
+                        not accept_price_3(a,d,high),
+                        not accept_price_4(a,d,high),
+                        not accept_price_5(a,d,high) :-
+                            proved(not maker(a,d)).
+                        not accept_price_6(a,d,high).
+                not offer_price_1(b,Var12 | {Var12 \= c,Var12 \= d},Var13 | {Var13 \= high}),
+                offer_price_1(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                not buy(b,Var12 | {Var12 \= c,Var12 \= d},high) :-
+                    not accept_price(b,Var12 | {Var12 \= c,Var12 \= d},high) :-
+                        not accept_price_1(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_2(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_3(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_4(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_5(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_6(b,Var12 | {Var12 \= c,Var12 \= d},high).
+                not offer_price_1(b,c,Var14 | {Var14 \= high}),
+                offer_price_1(b,c,high),
+                not buy(b,c,high) :-
+                    not accept_price(b,c,high) :-
+                        not accept_price_1(b,c,high) :-
+                            not maker(b,c) :-
+                                product(b) :-
+                                    product_b :-
+                                        evidence(product(b)).
+                                not evidence(maker(b,c)),
+                                proved(product(b)),
+                                proved(not evidence(maker(b,c))),
+                                neg_maker(b,c) :-
+                                    evidence(-maker(b,c)).
+                        not accept_price_2(b,c,high),
+                        not accept_price_3(b,c,high) :-
+                            proved(not maker(b,c)).
+                        not accept_price_4(b,c,high) :-
+                            proved(not maker(b,c)).
+                        not accept_price_5(b,c,high),
+                        not accept_price_6(b,c,high) :-
+                            proved(not maker(b,c)).
+                not offer_price_1(b,d,Var15 | {Var15 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not accept_price(b,d,high) :-
+                        not accept_price_1(b,d,high),
+                        not accept_price_2(b,d,high) :-
+                            maker(b,d) :-
+                                proved(product(b)),
+                                evidence(maker(b,d)).
+                        not accept_price_3(b,d,high),
+                        not accept_price_4(b,d,high),
+                        not accept_price_5(b,d,high) :-
+                            proved(maker(b,d)).
+                        not accept_price_6(b,d,high).
+    buy(a,c,low) :-
+        accept_price(a,c,low) :-
+            accept_price_3(a,c,low) :-
+                proved(maker(a,c)),
+                not lie :-
+                    neg_lie :-
+                        chs(not lie).
+            not accept_price_1_check :-
+                not accept_price_1(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c},Var18),
+                not accept_price_1(Var16 | {Var16 \= a,Var16 \= b},c,Var19) :-
+                    not maker(Var16 | {Var16 \= a,Var16 \= b},c) :-
+                        not product(Var16 | {Var16 \= a,Var16 \= b}),
+                        not product(Var16 | {Var16 \= a,Var16 \= b}).
+                not accept_price_1(a,Var20 | {Var20 \= c},Var21),
+                not accept_price_1(a,c,Var22 | {Var22 \= lowest}) :-
+                    proved(maker(a,c)).
+                accept_price_1(a,c,lowest) :-
+                    proved(maker(a,c)),
+                    proved(not lie).
+                not sale(a,c,lowest) :-
+                    not offer_price_a(a,c,lowest) :-
+                        not offer_price_1(a,c,lowest),
+                        not offer_price_2(a,c,lowest),
+                        not offer_price_3(a,c,lowest),
+                        not offer_price_4(a,c,lowest).
+                not accept_price_1(b,Var23 | {Var23 \= c},Var24),
+                not accept_price_1(b,c,Var25) :-
+                    proved(not maker(b,c)).
+            not accept_price_2_check :-
+                not accept_price_2(Var26 | {Var26 \= a,Var26 \= b},Var27 | {Var27 \= d},Var28),
+                not accept_price_2(Var26 | {Var26 \= a,Var26 \= b},d,Var29) :-
+                    not maker(Var26 | {Var26 \= a,Var26 \= b},d) :-
+                        not product(Var26 | {Var26 \= a,Var26 \= b}),
+                        not product(Var26 | {Var26 \= a,Var26 \= b}).
+                not accept_price_2(a,Var30 | {Var30 \= d},Var31),
+                not accept_price_2(a,d,Var32) :-
+                    proved(not maker(a,d)).
+                not accept_price_2(b,Var33 | {Var33 \= d},Var34),
+                not accept_price_2(b,d,Var35 | {Var35 \= lowest}) :-
+                    proved(maker(b,d)).
+                accept_price_2(b,d,lowest) :-
+                    proved(maker(b,d)).
+                not sale(b,d,lowest) :-
+                    not offer_price_b(b,d,lowest) :-
+                        not offer_price_1(b,d,lowest),
+                        not offer_price_2(b,d,lowest),
+                        not offer_price_3(b,d,lowest),
+                        not offer_price_4(b,d,lowest),
+                        not offer_price_5(b,d,lowest) :-
+                            not mail_list :-
+                                not evidence(mail_list) :-
+                                    proved(not lie).
+                                proved(not evidence(mail_list)),
+                                neg_mail_list :-
+                                    evidence(-mail_list) :-
+                                        proved(not lie).
+        quality(a) :-
+            evidence(quality(a)).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  sale(a,c,low),  offer_price_a(a,c,low),  senior_customer,  age_older_than_65,  evidence(age_older_than_65),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  evidence(-maker(a,d)),  product(b),  product_b,  evidence(product(b)),  evidence(-maker(b,c)),  maker(b,d),  evidence(maker(b,d)),  buy(a,c,low),  accept_price(a,c,low),  evidence(-mail_list),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	2 (in 532.156 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_2(a,c,low) :-
+                senior_customer :-
+                    age_older_than_65 :-
+                        evidence(age_older_than_65).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high) :-
+                    not accept_price(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high) :-
+                        not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_2(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_3(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_4(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_5(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_6(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high).
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6 | {Var6 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},c,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                    not accept_price(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                        not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_2(Var3 | {Var3 \= a,Var3 \= b},c,high),
+                        not accept_price_3(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_4(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_5(Var3 | {Var3 \= a,Var3 \= b},c,high),
+                        not accept_price_6(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},d,Var7 | {Var7 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                    not accept_price(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                        not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                        not accept_price_2(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},d) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_3(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                        not accept_price_4(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                        not accept_price_5(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},d) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_6(Var3 | {Var3 \= a,Var3 \= b},d,high).
+                not offer_price_1(a,Var8 | {Var8 \= c,Var8 \= d},Var9 | {Var9 \= high}),
+                offer_price_1(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                not buy(a,Var8 | {Var8 \= c,Var8 \= d},high) :-
+                    not accept_price(a,Var8 | {Var8 \= c,Var8 \= d},high) :-
+                        not accept_price_1(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_2(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_3(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_4(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_5(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_6(a,Var8 | {Var8 \= c,Var8 \= d},high).
+                not offer_price_1(a,c,Var10 | {Var10 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not accept_price(a,c,high) :-
+                        not accept_price_1(a,c,high) :-
+                            maker(a,c) :-
+                                product(a) :-
+                                    product_a :-
+                                        evidence(product(a)).
+                                evidence(maker(a,c)).
+                        not accept_price_2(a,c,high),
+                        not accept_price_3(a,c,high) :-
+                            proved(maker(a,c)).
+                        not accept_price_4(a,c,high) :-
+                            proved(maker(a,c)).
+                        not accept_price_5(a,c,high),
+                        not accept_price_6(a,c,high) :-
+                            proved(maker(a,c)).
+                not offer_price_1(a,d,Var11 | {Var11 \= high}),
+                offer_price_1(a,d,high),
+                not buy(a,d,high) :-
+                    not accept_price(a,d,high) :-
+                        not accept_price_1(a,d,high),
+                        not accept_price_2(a,d,high) :-
+                            not maker(a,d) :-
+                                proved(product(a)),
+                                not evidence(maker(a,d)),
+                                proved(not evidence(maker(a,d))),
+                                neg_maker(a,d) :-
+                                    evidence(-maker(a,d)).
+                        not accept_price_3(a,d,high),
+                        not accept_price_4(a,d,high),
+                        not accept_price_5(a,d,high) :-
+                            proved(not maker(a,d)).
+                        not accept_price_6(a,d,high).
+                not offer_price_1(b,Var12 | {Var12 \= c,Var12 \= d},Var13 | {Var13 \= high}),
+                offer_price_1(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                not buy(b,Var12 | {Var12 \= c,Var12 \= d},high) :-
+                    not accept_price(b,Var12 | {Var12 \= c,Var12 \= d},high) :-
+                        not accept_price_1(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_2(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_3(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_4(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_5(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_6(b,Var12 | {Var12 \= c,Var12 \= d},high).
+                not offer_price_1(b,c,Var14 | {Var14 \= high}),
+                offer_price_1(b,c,high),
+                not buy(b,c,high) :-
+                    not accept_price(b,c,high) :-
+                        not accept_price_1(b,c,high) :-
+                            not maker(b,c) :-
+                                product(b) :-
+                                    product_b :-
+                                        evidence(product(b)).
+                                not evidence(maker(b,c)),
+                                proved(product(b)),
+                                proved(not evidence(maker(b,c))),
+                                neg_maker(b,c) :-
+                                    evidence(-maker(b,c)).
+                        not accept_price_2(b,c,high),
+                        not accept_price_3(b,c,high) :-
+                            proved(not maker(b,c)).
+                        not accept_price_4(b,c,high) :-
+                            proved(not maker(b,c)).
+                        not accept_price_5(b,c,high),
+                        not accept_price_6(b,c,high) :-
+                            proved(not maker(b,c)).
+                not offer_price_1(b,d,Var15 | {Var15 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not accept_price(b,d,high) :-
+                        not accept_price_1(b,d,high),
+                        not accept_price_2(b,d,high) :-
+                            maker(b,d) :-
+                                proved(product(b)),
+                                evidence(maker(b,d)).
+                        not accept_price_3(b,d,high),
+                        not accept_price_4(b,d,high),
+                        not accept_price_5(b,d,high) :-
+                            proved(maker(b,d)).
+                        not accept_price_6(b,d,high).
+    buy(a,c,low) :-
+        accept_price(a,c,low) :-
+            accept_price_6(a,c,low) :-
+                proved(maker(a,c)),
+                lie :-
+                    not neg_lie :-
+                        chs(lie).
+            not accept_price_1_check :-
+                not accept_price_1(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c},Var18),
+                not accept_price_1(Var16 | {Var16 \= a,Var16 \= b},c,Var19) :-
+                    not maker(Var16 | {Var16 \= a,Var16 \= b},c) :-
+                        not product(Var16 | {Var16 \= a,Var16 \= b}),
+                        not product(Var16 | {Var16 \= a,Var16 \= b}).
+                not accept_price_1(a,Var20 | {Var20 \= c},Var21),
+                not accept_price_1(a,c,Var22 | {Var22 \= lowest}) :-
+                    proved(maker(a,c)).
+                not accept_price_1(a,c,lowest) :-
+                    proved(maker(a,c)),
+                    proved(lie).
+                not accept_price_1(b,Var23 | {Var23 \= c},Var24),
+                not accept_price_1(b,c,Var25) :-
+                    proved(not maker(b,c)).
+            not accept_price_2_check :-
+                not accept_price_2(Var26 | {Var26 \= a,Var26 \= b},Var27 | {Var27 \= d},Var28),
+                not accept_price_2(Var26 | {Var26 \= a,Var26 \= b},d,Var29) :-
+                    not maker(Var26 | {Var26 \= a,Var26 \= b},d) :-
+                        not product(Var26 | {Var26 \= a,Var26 \= b}),
+                        not product(Var26 | {Var26 \= a,Var26 \= b}).
+                not accept_price_2(a,Var30 | {Var30 \= d},Var31),
+                not accept_price_2(a,d,Var32) :-
+                    proved(not maker(a,d)).
+                not accept_price_2(b,Var33 | {Var33 \= d},Var34),
+                not accept_price_2(b,d,Var35 | {Var35 \= lowest}) :-
+                    proved(maker(b,d)).
+                not accept_price_2(b,d,lowest) :-
+                    proved(maker(b,d)),
+                    proved(lie).
+            not accept_price_3_check :-
+                not accept_price_3(Var36 | {Var36 \= a,Var36 \= b},Var37 | {Var37 \= c},Var38),
+                not accept_price_3(Var36 | {Var36 \= a,Var36 \= b},c,Var39) :-
+                    not maker(Var36 | {Var36 \= a,Var36 \= b},c) :-
+                        not product(Var36 | {Var36 \= a,Var36 \= b}),
+                        not product(Var36 | {Var36 \= a,Var36 \= b}).
+                not accept_price_3(a,Var40 | {Var40 \= c},Var41),
+                not accept_price_3(a,c,Var42 | {Var42 \= low}) :-
+                    proved(maker(a,c)).
+                not accept_price_3(a,c,low) :-
+                    proved(maker(a,c)),
+                    proved(lie).
+                not accept_price_3(b,Var43 | {Var43 \= c},Var44),
+                not accept_price_3(b,c,Var45) :-
+                    proved(not maker(b,c)).
+            not accept_price_4_check :-
+                not accept_price_4(Var46 | {Var46 \= a,Var46 \= b},Var47 | {Var47 \= c},Var48),
+                not accept_price_4(Var46 | {Var46 \= a,Var46 \= b},c,Var49) :-
+                    not maker(Var46 | {Var46 \= a,Var46 \= b},c) :-
+                        not product(Var46 | {Var46 \= a,Var46 \= b}),
+                        not product(Var46 | {Var46 \= a,Var46 \= b}).
+                not accept_price_4(a,Var50 | {Var50 \= c},Var51),
+                not accept_price_4(a,c,Var52 | {Var52 \= lowest}) :-
+                    proved(maker(a,c)).
+                accept_price_4(a,c,lowest) :-
+                    proved(maker(a,c)),
+                    proved(lie).
+                not sale(a,c,lowest) :-
+                    not offer_price_a(a,c,lowest) :-
+                        not offer_price_1(a,c,lowest),
+                        not offer_price_2(a,c,lowest),
+                        not offer_price_3(a,c,lowest),
+                        not offer_price_4(a,c,lowest).
+                not accept_price_4(b,Var53 | {Var53 \= c},Var54),
+                not accept_price_4(b,c,Var55) :-
+                    proved(not maker(b,c)).
+            not accept_price_5_check :-
+                not accept_price_5(Var56 | {Var56 \= a,Var56 \= b},Var57 | {Var57 \= d},Var58),
+                not accept_price_5(Var56 | {Var56 \= a,Var56 \= b},d,Var59) :-
+                    not maker(Var56 | {Var56 \= a,Var56 \= b},d) :-
+                        not product(Var56 | {Var56 \= a,Var56 \= b}),
+                        not product(Var56 | {Var56 \= a,Var56 \= b}).
+                not accept_price_5(a,Var60 | {Var60 \= d},Var61),
+                not accept_price_5(a,d,Var62) :-
+                    proved(not maker(a,d)).
+                not accept_price_5(b,Var63 | {Var63 \= d},Var64),
+                not accept_price_5(b,d,Var65 | {Var65 \= lowest}) :-
+                    proved(maker(b,d)).
+                accept_price_5(b,d,lowest) :-
+                    proved(maker(b,d)).
+                not sale(b,d,lowest) :-
+                    not offer_price_b(b,d,lowest) :-
+                        not offer_price_1(b,d,lowest),
+                        not offer_price_2(b,d,lowest),
+                        not offer_price_3(b,d,lowest),
+                        not offer_price_4(b,d,lowest),
+                        offer_price_5(b,d,lowest) :-
+                            mail_list :-
+                                evidence(mail_list) :-
+                                    proved(lie).
+                            cash :-
+                                evidence(cash).
+                        proved(not offer_price_1_check),
+                        offer_price_2_check :-
+                            offer_price_2(a,c,low) :-
+                                proved(senior_customer).
+                            buy(a,c,low) :-
+                                accept_price(a,c,low) :-
+                                    accept_price_6(a,c,low) :-
+                                        maker(a,c) :-
+                                            product(a) :-
+                                                proved(product_a).
+                                            proved(evidence(maker(a,c))).
+                                    proved(not accept_price_1_check),
+                                    proved(not accept_price_2_check),
+                                    proved(not accept_price_3_check),
+                                    proved(not accept_price_4_check),
+                                    chs(not accept_price_5_check).
+                                quality(a) :-
+                                    evidence(quality(a)).
+        proved(quality(a)).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  sale(a,c,low),  offer_price_a(a,c,low),  senior_customer,  age_older_than_65,  evidence(age_older_than_65),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  evidence(-maker(a,d)),  product(b),  product_b,  evidence(product(b)),  evidence(-maker(b,c)),  maker(b,d),  evidence(maker(b,d)),  buy(a,c,low),  accept_price(a,c,low),  mail_list,  evidence(mail_list),  cash,  evidence(cash),  quality(a),  evidence(quality(a)) }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	3 (in 3395.237 ms)
+
+JUSTIFICATION_TREE:
+query(b,d,lowest) :-
+    sale(b,d,lowest) :-
+        offer_price_b(b,d,lowest) :-
+            offer_price_5(b,d,lowest) :-
+                mail_list :-
+                    evidence(mail_list) :-
+                        lie :-
+                            not neg_lie :-
+                                chs(lie).
+                cash :-
+                    evidence(cash).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high) :-
+                    not accept_price(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high) :-
+                        not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_2(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_3(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_4(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_5(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high),
+                        not accept_price_6(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c,Var4 \= d},high).
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6 | {Var6 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},c,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                    not accept_price(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                        not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_2(Var3 | {Var3 \= a,Var3 \= b},c,high),
+                        not accept_price_3(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_4(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_5(Var3 | {Var3 \= a,Var3 \= b},c,high),
+                        not accept_price_6(Var3 | {Var3 \= a,Var3 \= b},c,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},d,Var7 | {Var7 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                    not accept_price(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                        not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                        not accept_price_2(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},d) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_3(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                        not accept_price_4(Var3 | {Var3 \= a,Var3 \= b},d,high),
+                        not accept_price_5(Var3 | {Var3 \= a,Var3 \= b},d,high) :-
+                            not maker(Var3 | {Var3 \= a,Var3 \= b},d) :-
+                                not product(Var3 | {Var3 \= a,Var3 \= b}),
+                                not product(Var3 | {Var3 \= a,Var3 \= b}).
+                        not accept_price_6(Var3 | {Var3 \= a,Var3 \= b},d,high).
+                not offer_price_1(a,Var8 | {Var8 \= c,Var8 \= d},Var9 | {Var9 \= high}),
+                offer_price_1(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                not buy(a,Var8 | {Var8 \= c,Var8 \= d},high) :-
+                    not accept_price(a,Var8 | {Var8 \= c,Var8 \= d},high) :-
+                        not accept_price_1(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_2(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_3(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_4(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_5(a,Var8 | {Var8 \= c,Var8 \= d},high),
+                        not accept_price_6(a,Var8 | {Var8 \= c,Var8 \= d},high).
+                not offer_price_1(a,c,Var10 | {Var10 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not accept_price(a,c,high) :-
+                        not accept_price_1(a,c,high) :-
+                            maker(a,c) :-
+                                product(a) :-
+                                    product_a :-
+                                        evidence(product(a)).
+                                evidence(maker(a,c)).
+                        not accept_price_2(a,c,high),
+                        not accept_price_3(a,c,high) :-
+                            proved(maker(a,c)).
+                        not accept_price_4(a,c,high) :-
+                            proved(maker(a,c)).
+                        not accept_price_5(a,c,high),
+                        not accept_price_6(a,c,high) :-
+                            proved(maker(a,c)).
+                not offer_price_1(a,d,Var11 | {Var11 \= high}),
+                offer_price_1(a,d,high),
+                not buy(a,d,high) :-
+                    not accept_price(a,d,high) :-
+                        not accept_price_1(a,d,high),
+                        not accept_price_2(a,d,high) :-
+                            not maker(a,d) :-
+                                proved(product(a)),
+                                not evidence(maker(a,d)),
+                                proved(not evidence(maker(a,d))),
+                                neg_maker(a,d) :-
+                                    evidence(-maker(a,d)).
+                        not accept_price_3(a,d,high),
+                        not accept_price_4(a,d,high),
+                        not accept_price_5(a,d,high) :-
+                            proved(not maker(a,d)).
+                        not accept_price_6(a,d,high).
+                not offer_price_1(b,Var12 | {Var12 \= c,Var12 \= d},Var13 | {Var13 \= high}),
+                offer_price_1(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                not buy(b,Var12 | {Var12 \= c,Var12 \= d},high) :-
+                    not accept_price(b,Var12 | {Var12 \= c,Var12 \= d},high) :-
+                        not accept_price_1(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_2(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_3(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_4(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_5(b,Var12 | {Var12 \= c,Var12 \= d},high),
+                        not accept_price_6(b,Var12 | {Var12 \= c,Var12 \= d},high).
+                not offer_price_1(b,c,Var14 | {Var14 \= high}),
+                offer_price_1(b,c,high),
+                not buy(b,c,high) :-
+                    not accept_price(b,c,high) :-
+                        not accept_price_1(b,c,high) :-
+                            not maker(b,c) :-
+                                product(b) :-
+                                    product_b :-
+                                        evidence(product(b)).
+                                not evidence(maker(b,c)),
+                                proved(product(b)),
+                                proved(not evidence(maker(b,c))),
+                                neg_maker(b,c) :-
+                                    evidence(-maker(b,c)).
+                        not accept_price_2(b,c,high),
+                        not accept_price_3(b,c,high) :-
+                            proved(not maker(b,c)).
+                        not accept_price_4(b,c,high) :-
+                            proved(not maker(b,c)).
+                        not accept_price_5(b,c,high),
+                        not accept_price_6(b,c,high) :-
+                            proved(not maker(b,c)).
+                not offer_price_1(b,d,Var15 | {Var15 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not accept_price(b,d,high) :-
+                        not accept_price_1(b,d,high),
+                        not accept_price_2(b,d,high) :-
+                            maker(b,d) :-
+                                proved(product(b)),
+                                evidence(maker(b,d)).
+                        not accept_price_3(b,d,high),
+                        not accept_price_4(b,d,high),
+                        not accept_price_5(b,d,high) :-
+                            proved(maker(b,d)).
+                        not accept_price_6(b,d,high).
+            not offer_price_2_check :-
+                not offer_price_2(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},Var18 | {Var18 \= low}),
+                offer_price_2(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},low) :-
+                    senior_customer :-
+                        age_older_than_65 :-
+                            evidence(age_older_than_65).
+                not buy(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},low) :-
+                    not accept_price(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},low) :-
+                        not accept_price_1(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},low),
+                        not accept_price_2(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},low),
+                        not accept_price_3(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},low),
+                        not accept_price_4(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},low),
+                        not accept_price_5(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},low),
+                        not accept_price_6(Var16 | {Var16 \= a,Var16 \= b},Var17 | {Var17 \= c,Var17 \= d},low).
+                not offer_price_2(Var16 | {Var16 \= a,Var16 \= b},c,Var19 | {Var19 \= low}),
+                offer_price_2(Var16 | {Var16 \= a,Var16 \= b},c,low) :-
+                    proved(senior_customer).
+                not buy(Var16 | {Var16 \= a,Var16 \= b},c,low) :-
+                    not accept_price(Var16 | {Var16 \= a,Var16 \= b},c,low) :-
+                        not accept_price_1(Var16 | {Var16 \= a,Var16 \= b},c,low) :-
+                            not maker(Var16 | {Var16 \= a,Var16 \= b},c) :-
+                                not product(Var16 | {Var16 \= a,Var16 \= b}),
+                                not product(Var16 | {Var16 \= a,Var16 \= b}).
+                        not accept_price_2(Var16 | {Var16 \= a,Var16 \= b},c,low),
+                        not accept_price_3(Var16 | {Var16 \= a,Var16 \= b},c,low) :-
+                            not maker(Var16 | {Var16 \= a,Var16 \= b},c) :-
+                                not product(Var16 | {Var16 \= a,Var16 \= b}),
+                                not product(Var16 | {Var16 \= a,Var16 \= b}).
+                        not accept_price_4(Var16 | {Var16 \= a,Var16 \= b},c,low) :-
+                            not maker(Var16 | {Var16 \= a,Var16 \= b},c) :-
+                                not product(Var16 | {Var16 \= a,Var16 \= b}),
+                                not product(Var16 | {Var16 \= a,Var16 \= b}).
+                        not accept_price_5(Var16 | {Var16 \= a,Var16 \= b},c,low),
+                        not accept_price_6(Var16 | {Var16 \= a,Var16 \= b},c,low) :-
+                            not maker(Var16 | {Var16 \= a,Var16 \= b},c) :-
+                                not product(Var16 | {Var16 \= a,Var16 \= b}),
+                                not product(Var16 | {Var16 \= a,Var16 \= b}).
+                not offer_price_2(Var16 | {Var16 \= a,Var16 \= b},d,Var20 | {Var20 \= low}),
+                offer_price_2(Var16 | {Var16 \= a,Var16 \= b},d,low),
+                not buy(Var16 | {Var16 \= a,Var16 \= b},d,low) :-
+                    not accept_price(Var16 | {Var16 \= a,Var16 \= b},d,low) :-
+                        not accept_price_1(Var16 | {Var16 \= a,Var16 \= b},d,low),
+                        not accept_price_2(Var16 | {Var16 \= a,Var16 \= b},d,low) :-
+                            not maker(Var16 | {Var16 \= a,Var16 \= b},d) :-
+                                not product(Var16 | {Var16 \= a,Var16 \= b}),
+                                not product(Var16 | {Var16 \= a,Var16 \= b}).
+                        not accept_price_3(Var16 | {Var16 \= a,Var16 \= b},d,low),
+                        not accept_price_4(Var16 | {Var16 \= a,Var16 \= b},d,low),
+                        not accept_price_5(Var16 | {Var16 \= a,Var16 \= b},d,low) :-
+                            not maker(Var16 | {Var16 \= a,Var16 \= b},d) :-
+                                not product(Var16 | {Var16 \= a,Var16 \= b}),
+                                not product(Var16 | {Var16 \= a,Var16 \= b}).
+                        not accept_price_6(Var16 | {Var16 \= a,Var16 \= b},d,low).
+                not offer_price_2(a,Var21 | {Var21 \= c,Var21 \= d},Var22 | {Var22 \= low}),
+                offer_price_2(a,Var21 | {Var21 \= c,Var21 \= d},low),
+                not buy(a,Var21 | {Var21 \= c,Var21 \= d},low) :-
+                    not accept_price(a,Var21 | {Var21 \= c,Var21 \= d},low) :-
+                        not accept_price_1(a,Var21 | {Var21 \= c,Var21 \= d},low),
+                        not accept_price_2(a,Var21 | {Var21 \= c,Var21 \= d},low),
+                        not accept_price_3(a,Var21 | {Var21 \= c,Var21 \= d},low),
+                        not accept_price_4(a,Var21 | {Var21 \= c,Var21 \= d},low),
+                        not accept_price_5(a,Var21 | {Var21 \= c,Var21 \= d},low),
+                        not accept_price_6(a,Var21 | {Var21 \= c,Var21 \= d},low).
+                not offer_price_2(a,c,Var23 | {Var23 \= low}),
+                offer_price_2(a,c,low),
+                not buy(a,c,low) :-
+                    not accept_price(a,c,low) :-
+                        not accept_price_1(a,c,low) :-
+                            proved(maker(a,c)).
+                        not accept_price_2(a,c,low),
+                        not accept_price_3(a,c,low) :-
+                            proved(maker(a,c)),
+                            proved(lie).
+                        not accept_price_4(a,c,low) :-
+                            proved(maker(a,c)).
+                        not accept_price_5(a,c,low),
+                        accept_price_6(a,c,low) :-
+                            proved(maker(a,c)),
+                            proved(lie).
+                        not accept_price_1_check :-
+                            not accept_price_1(Var24 | {Var24 \= a,Var24 \= b},Var25 | {Var25 \= c},Var26),
+                            not accept_price_1(Var24 | {Var24 \= a,Var24 \= b},c,Var27) :-
+                                not maker(Var24 | {Var24 \= a,Var24 \= b},c) :-
+                                    not product(Var24 | {Var24 \= a,Var24 \= b}),
+                                    not product(Var24 | {Var24 \= a,Var24 \= b}).
+                            not accept_price_1(a,Var28 | {Var28 \= c},Var29),
+                            not accept_price_1(a,c,Var30 | {Var30 \= lowest}) :-
+                                proved(maker(a,c)).
+                            not accept_price_1(a,c,lowest) :-
+                                proved(maker(a,c)),
+                                proved(lie).
+                            not accept_price_1(b,Var31 | {Var31 \= c},Var32),
+                            not accept_price_1(b,c,Var33) :-
+                                proved(not maker(b,c)).
+                        not accept_price_2_check :-
+                            not accept_price_2(Var34 | {Var34 \= a,Var34 \= b},Var35 | {Var35 \= d},Var36),
+                            not accept_price_2(Var34 | {Var34 \= a,Var34 \= b},d,Var37) :-
+                                not maker(Var34 | {Var34 \= a,Var34 \= b},d) :-
+                                    not product(Var34 | {Var34 \= a,Var34 \= b}),
+                                    not product(Var34 | {Var34 \= a,Var34 \= b}).
+                            not accept_price_2(a,Var38 | {Var38 \= d},Var39),
+                            not accept_price_2(a,d,Var40) :-
+                                proved(not maker(a,d)).
+                            not accept_price_2(b,Var41 | {Var41 \= d},Var42),
+                            not accept_price_2(b,d,Var43 | {Var43 \= lowest}) :-
+                                proved(maker(b,d)).
+                            not accept_price_2(b,d,lowest) :-
+                                proved(maker(b,d)),
+                                proved(lie).
+                        not accept_price_3_check :-
+                            not accept_price_3(Var44 | {Var44 \= a,Var44 \= b},Var45 | {Var45 \= c},Var46),
+                            not accept_price_3(Var44 | {Var44 \= a,Var44 \= b},c,Var47) :-
+                                not maker(Var44 | {Var44 \= a,Var44 \= b},c) :-
+                                    not product(Var44 | {Var44 \= a,Var44 \= b}),
+                                    not product(Var44 | {Var44 \= a,Var44 \= b}).
+                            not accept_price_3(a,Var48 | {Var48 \= c},Var49),
+                            not accept_price_3(a,c,Var50 | {Var50 \= low}) :-
+                                proved(maker(a,c)).
+                            proved(not accept_price_3(a,c,low)),
+                            not accept_price_3(b,Var51 | {Var51 \= c},Var52),
+                            not accept_price_3(b,c,Var53) :-
+                                proved(not maker(b,c)).
+                        not accept_price_4_check :-
+                            not accept_price_4(Var54 | {Var54 \= a,Var54 \= b},Var55 | {Var55 \= c},Var56),
+                            not accept_price_4(Var54 | {Var54 \= a,Var54 \= b},c,Var57) :-
+                                not maker(Var54 | {Var54 \= a,Var54 \= b},c) :-
+                                    not product(Var54 | {Var54 \= a,Var54 \= b}),
+                                    not product(Var54 | {Var54 \= a,Var54 \= b}).
+                            not accept_price_4(a,Var58 | {Var58 \= c},Var59),
+                            not accept_price_4(a,c,Var60 | {Var60 \= lowest}) :-
+                                proved(maker(a,c)).
+                            accept_price_4(a,c,lowest) :-
+                                proved(maker(a,c)),
+                                proved(lie).
+                            not sale(a,c,lowest) :-
+                                not offer_price_a(a,c,lowest) :-
+                                    not offer_price_1(a,c,lowest),
+                                    not offer_price_2(a,c,lowest),
+                                    not offer_price_3(a,c,lowest),
+                                    not offer_price_4(a,c,lowest).
+                            not accept_price_4(b,Var61 | {Var61 \= c},Var62),
+                            not accept_price_4(b,c,Var63) :-
+                                proved(not maker(b,c)).
+                        accept_price_5_check :-
+                            accept_price_5(b,d,lowest) :-
+                                maker(b,d) :-
+                                    product(b) :-
+                                        proved(product_b).
+                                    proved(evidence(maker(b,d))).
+                            sale(b,d,lowest) :-
+                                offer_price_b(b,d,lowest) :-
+                                    offer_price_5(b,d,lowest) :-
+                                        proved(mail_list),
+                                        proved(cash).
+                                    proved(not offer_price_1_check),
+                                    chs(not offer_price_2_check),
+                                    not offer_price_3_check :-
+                                        not offer_price_3(Var64,Var65,Var66 | {Var66 \= low}),
+                                        not offer_price_3(Var64,Var65,low) :-
+                                            not student_customer :-
+                                                not student :-
+                                                    not evidence(student),
+                                                    proved(not evidence(student)),
+                                                    neg_student :-
+                                                        evidence(-student).
+                                    not offer_price_4_check :-
+                                        not offer_price_4(Var67 | {Var67 \= b},Var68,Var69 | {Var69 \= low}),
+                                        not offer_price_4(Var67 | {Var67 \= b},Var68,low) :-
+                                            not bargain(Var67 | {Var67 \= b}).
+                                        not offer_price_4(b,Var70 | {Var70 \= c,Var70 \= d},Var71 | {Var71 \= low}),
+                                        offer_price_4(b,Var70 | {Var70 \= c,Var70 \= d},low) :-
+                                            bargain(b),
+                                            proved(cash).
+                                        not buy(b,Var70 | {Var70 \= c,Var70 \= d},low) :-
+                                            not accept_price(b,Var70 | {Var70 \= c,Var70 \= d},low) :-
+                                                not accept_price_1(b,Var70 | {Var70 \= c,Var70 \= d},low),
+                                                not accept_price_2(b,Var70 | {Var70 \= c,Var70 \= d},low),
+                                                not accept_price_3(b,Var70 | {Var70 \= c,Var70 \= d},low),
+                                                not accept_price_4(b,Var70 | {Var70 \= c,Var70 \= d},low),
+                                                not accept_price_5(b,Var70 | {Var70 \= c,Var70 \= d},low),
+                                                not accept_price_6(b,Var70 | {Var70 \= c,Var70 \= d},low).
+                                        not offer_price_4(b,c,Var72 | {Var72 \= low}),
+                                        offer_price_4(b,c,low) :-
+                                            proved(bargain(b)).
+                                        not buy(b,c,low) :-
+                                            not accept_price(b,c,low) :-
+                                                not accept_price_1(b,c,low) :-
+                                                    proved(not maker(b,c)).
+                                                not accept_price_2(b,c,low),
+                                                not accept_price_3(b,c,low) :-
+                                                    proved(not maker(b,c)).
+                                                not accept_price_4(b,c,low) :-
+                                                    proved(not maker(b,c)).
+                                                not accept_price_5(b,c,low),
+                                                not accept_price_6(b,c,low) :-
+                                                    proved(not maker(b,c)).
+                                        not offer_price_4(b,d,Var73 | {Var73 \= low}),
+                                        offer_price_4(b,d,low),
+                                        not buy(b,d,low) :-
+                                            not accept_price(b,d,low) :-
+                                                not accept_price_1(b,d,low),
+                                                not accept_price_2(b,d,low) :-
+                                                    proved(maker(b,d)).
+                                                not accept_price_3(b,d,low),
+                                                not accept_price_4(b,d,low),
+                                                not accept_price_5(b,d,low) :-
+                                                    proved(maker(b,d)).
+                                                not accept_price_6(b,d,low).
+                not offer_price_2(a,d,Var74 | {Var74 \= low}),
+                offer_price_2(a,d,low),
+                not buy(a,d,low) :-
+                    not accept_price(a,d,low) :-
+                        not accept_price_1(a,d,low),
+                        not accept_price_2(a,d,low) :-
+                            proved(not maker(a,d)).
+                        not accept_price_3(a,d,low),
+                        not accept_price_4(a,d,low),
+                        not accept_price_5(a,d,low) :-
+                            proved(not maker(a,d)).
+                        not accept_price_6(a,d,low).
+                not offer_price_2(b,Var75 | {Var75 \= c,Var75 \= d},Var76 | {Var76 \= low}),
+                offer_price_2(b,Var75 | {Var75 \= c,Var75 \= d},low),
+                not buy(b,Var75 | {Var75 \= c,Var75 \= d},low) :-
+                    not accept_price(b,Var75 | {Var75 \= c,Var75 \= d},low) :-
+                        not accept_price_1(b,Var75 | {Var75 \= c,Var75 \= d},low),
+                        not accept_price_2(b,Var75 | {Var75 \= c,Var75 \= d},low),
+                        not accept_price_3(b,Var75 | {Var75 \= c,Var75 \= d},low),
+                        not accept_price_4(b,Var75 | {Var75 \= c,Var75 \= d},low),
+                        not accept_price_5(b,Var75 | {Var75 \= c,Var75 \= d},low),
+                        not accept_price_6(b,Var75 | {Var75 \= c,Var75 \= d},low).
+                not offer_price_2(b,c,Var77 | {Var77 \= low}),
+                offer_price_2(b,c,low),
+                proved(not buy(b,c,low)),
+                not offer_price_2(b,d,Var78 | {Var78 \= low}),
+                offer_price_2(b,d,low),
+                proved(not buy(b,d,low)).
+            proved(not offer_price_3_check),
+            proved(not offer_price_4_check).
+    buy(b,d,lowest) :-
+        accept_price(b,d,lowest) :-
+            accept_price_5(b,d,lowest) :-
+                proved(maker(b,d)),
+                proved(lie).
+            proved(not accept_price_1_check),
+            proved(not accept_price_2_check),
+            proved(not accept_price_3_check),
+            proved(not accept_price_4_check).
+        quality(b) :-
+            evidence(quality(b)).
+global_constraint.
+
+MODEL:
+{ query(b,d,lowest),  sale(b,d,lowest),  offer_price_b(b,d,lowest),  mail_list,  evidence(mail_list),  cash,  evidence(cash),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  evidence(-maker(a,d)),  product(b),  product_b,  evidence(product(b)),  evidence(-maker(b,c)),  maker(b,d),  evidence(maker(b,d)),  senior_customer,  age_older_than_65,  evidence(age_older_than_65),  evidence(-student),  bargain(b),  buy(b,d,lowest),  accept_price(b,d,lowest),  quality(b),  evidence(quality(b)) }
+BINDINGS: 
+Product = b 
+Maker = d 
+Price = lowest
+

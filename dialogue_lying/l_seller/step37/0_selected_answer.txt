@@ -1,0 +1,11 @@
+	ANSWER:	1
+
+JUSTIFICATION_TREE:
+not query(Product | {Product \= a,Product \= b},Maker,Price) :-
+    not sale(Product | {Product \= a,Product \= b},Maker,Price).
+global_constraint.
+
+MODEL:
+{ not query(Product | {Product \= a,Product \= b},Maker,Price),  not sale(Product | {Product \= a,Product \= b},Maker,Price) }
+BINDINGS: 
+Product \= a,Product \= b

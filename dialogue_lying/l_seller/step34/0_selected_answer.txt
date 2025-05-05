@@ -1,0 +1,21 @@
+	ANSWER:	1
+
+JUSTIFICATION_TREE:
+not query(b,Maker | {Maker \= c,Maker \= d},low) :-
+    not buy(b,Maker | {Maker \= c,Maker \= d},low) :-
+        not accept_price(b,Maker | {Maker \= c,Maker \= d},low) :-
+            not accept_price_1(b,Maker | {Maker \= c,Maker \= d},low),
+            not accept_price_2(b,Maker | {Maker \= c,Maker \= d},low),
+            not accept_price_3(b,Maker | {Maker \= c,Maker \= d},low),
+            not accept_price_4(b,Maker | {Maker \= c,Maker \= d},low),
+            not accept_price_5(b,Maker | {Maker \= c,Maker \= d},low),
+            not accept_price_6(b,Maker | {Maker \= c,Maker \= d},low).
+global_constraint.
+
+MODEL:
+{ not query(b,Maker | {Maker \= c,Maker \= d},low),  not buy(b,Maker | {Maker \= c,Maker \= d},low),  not accept_price(b,Maker | {Maker \= c,Maker \= d},low),  not accept_price_1(b,Maker | {Maker \= c,Maker \= d},low),  not accept_price_2(b,Maker | {Maker \= c,Maker \= d},low),  not accept_price_3(b,Maker | {Maker \= c,Maker \= d},low) }
+BINDINGS: 
+Product = b 
+Price = low 
+Maker \= c,Maker \= d
+

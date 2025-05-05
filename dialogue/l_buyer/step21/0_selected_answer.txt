@@ -1,0 +1,16 @@
+	ANSWER:	1
+
+JUSTIFICATION_TREE:
+not query(Product,Maker | {Maker \= c,Maker \= d},Price) :-
+    not buy(Product,Maker | {Maker \= c,Maker \= d},Price) :-
+        not accept_price(Product,Maker | {Maker \= c,Maker \= d},Price) :-
+            not accept_price_1(Product,Maker | {Maker \= c,Maker \= d},Price),
+            not accept_price_2(Product,Maker | {Maker \= c,Maker \= d},Price),
+            not accept_price_3(Product,Maker | {Maker \= c,Maker \= d},Price).
+global_constraint.
+
+MODEL:
+{ not query(Product,Maker | {Maker \= c,Maker \= d},Price),  not buy(Product,Maker | {Maker \= c,Maker \= d},Price),  not accept_price(Product,Maker | {Maker \= c,Maker \= d},Price),  not accept_price_1(Product,Maker | {Maker \= c,Maker \= d},Price),  not accept_price_2(Product,Maker | {Maker \= c,Maker \= d},Price),  not accept_price_3(Product,Maker | {Maker \= c,Maker \= d},Price) }
+BINDINGS: 
+Maker \= c,Maker \= d
+

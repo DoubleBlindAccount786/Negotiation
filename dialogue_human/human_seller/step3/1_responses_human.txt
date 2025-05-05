@@ -1,0 +1,5 @@
+% QUERY:I would like to know if
+     the proposal for product Product from maker Maker at price Price is acceptable.
+
+no models
+

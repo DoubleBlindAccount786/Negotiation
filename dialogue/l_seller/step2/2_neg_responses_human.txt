@@ -1,0 +1,17 @@
+% QUERY:I would like to know if
+     Product is  a and
+     Price is  high and
+     there is no evidence that 'query' holds (for Product, Maker, and Price).
+
+	ANSWER:	1 (in 0.459 ms)
+
+JUSTIFICATION_TREE:
+The global constraints hold.
+
+MODEL:
+{ not query(a,Maker | {Maker \= c,Maker \= d},high),  not buy(a,Maker | {Maker \= c,Maker \= d},high),  not accept_price(a,Maker | {Maker \= c,Maker \= d},high),  not accept_price_1(a,Maker | {Maker \= c,Maker \= d},high),  not accept_price_2(a,Maker | {Maker \= c,Maker \= d},high),  not accept_price_3(a,Maker | {Maker \= c,Maker \= d},high) }
+BINDINGS: 
+Product equal a 
+Price equal high 
+Maker not equal c, nor d
+

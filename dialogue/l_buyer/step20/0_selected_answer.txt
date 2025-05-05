@@ -1,0 +1,19 @@
+	ANSWER:	1
+
+JUSTIFICATION_TREE:
+not query(a,c,lowest) :-
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+global_constraint.
+
+MODEL:
+{ not query(a,c,lowest),  not sale(a,c,lowest),  not offer_price_a(a,c,lowest),  not offer_price_1(a,c,lowest),  not offer_price_2(a,c,lowest),  not offer_price_3(a,c,lowest),  not offer_price_4(a,c,lowest) }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = lowest
+

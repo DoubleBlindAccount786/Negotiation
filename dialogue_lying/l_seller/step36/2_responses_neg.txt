@@ -1,0 +1,23 @@
+% QUERY:?- Product = b,Price = lowest,not query(Product,Maker,Price).
+
+	ANSWER:	1 (in 0.771 ms)
+
+JUSTIFICATION_TREE:
+not query(b,Maker | {Maker \= c,Maker \= d},lowest) :-
+    not buy(b,Maker | {Maker \= c,Maker \= d},lowest) :-
+        not accept_price(b,Maker | {Maker \= c,Maker \= d},lowest) :-
+            not accept_price_1(b,Maker | {Maker \= c,Maker \= d},lowest),
+            not accept_price_2(b,Maker | {Maker \= c,Maker \= d},lowest),
+            not accept_price_3(b,Maker | {Maker \= c,Maker \= d},lowest),
+            not accept_price_4(b,Maker | {Maker \= c,Maker \= d},lowest),
+            not accept_price_5(b,Maker | {Maker \= c,Maker \= d},lowest),
+            not accept_price_6(b,Maker | {Maker \= c,Maker \= d},lowest).
+global_constraint.
+
+MODEL:
+{ not query(b,Maker | {Maker \= c,Maker \= d},lowest),  not buy(b,Maker | {Maker \= c,Maker \= d},lowest),  not accept_price(b,Maker | {Maker \= c,Maker \= d},lowest),  not accept_price_1(b,Maker | {Maker \= c,Maker \= d},lowest),  not accept_price_2(b,Maker | {Maker \= c,Maker \= d},lowest),  not accept_price_3(b,Maker | {Maker \= c,Maker \= d},lowest) }
+BINDINGS: 
+Product = b 
+Price = lowest 
+Maker \= c,Maker \= d
+

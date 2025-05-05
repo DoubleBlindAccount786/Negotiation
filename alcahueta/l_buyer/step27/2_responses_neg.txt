@@ -1,0 +1,17 @@
+% QUERY:?- Product = a,Maker = c,Price = low,not query(Product,Maker,Price).
+
+	ANSWER:	1 (in 0.458 ms)
+
+JUSTIFICATION_TREE:
+not query(a,c,low) :-
+    evidence(mail_list),
+    not evidence(-cash).
+global_constraint.
+
+MODEL:
+{ evidence(mail_list) }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+

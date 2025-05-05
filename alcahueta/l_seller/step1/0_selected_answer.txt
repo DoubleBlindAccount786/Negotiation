@@ -1,0 +1,14 @@
+	ANSWER:	1
+
+JUSTIFICATION_TREE:
+query(a,Maker,high) :-
+    sale(a,Maker,high) :-
+        offer_price_a(a,Maker,high) :-
+            offer_price_1(a,Maker,high).
+global_constraint.
+
+MODEL:
+{ query(a,Maker,high),  sale(a,Maker,high),  offer_price_a(a,Maker,high) }
+BINDINGS: 
+Product = a 
+Price = high

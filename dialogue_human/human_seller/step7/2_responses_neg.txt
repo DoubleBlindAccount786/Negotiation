@@ -1,0 +1,25 @@
+% QUERY:?- Product = b,Maker = d,Price = high,not query(Product,Maker,Price).
+
+	ANSWER:	1 (in 3.013 ms)
+
+JUSTIFICATION_TREE:
+not query(b,d,high) :-
+    not buy(b,d,high) :-
+        not accept_price(b,d,high) :-
+            not accept_price_1(b,d,high),
+            not accept_price_2(b,d,high) :-
+                maker(b,d) :-
+                    product(b) :-
+                        product_b :-
+                            evidence(product(b)).
+                    evidence(maker(b,d)).
+            not accept_price_3(b,d,high).
+global_constraint.
+
+MODEL:
+{ maker(b,d),  product(b),  product_b,  evidence(product(b)),  evidence(maker(b,d)) }
+BINDINGS: 
+Product = b 
+Maker = d 
+Price = high
+

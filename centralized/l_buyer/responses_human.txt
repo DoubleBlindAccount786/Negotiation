@@ -1,0 +1,234 @@
+% QUERY:I would like to know if
+     the proposal for product Product from maker Maker at price Price is acceptable.
+
+	ANSWER:	1 (in 530.385 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product b from maker d at price lowest is acceptable, because
+    buyer accepts buying product b from maker d at price lowest, because
+        buyer can buy the product b from maker d at price lowest, because
+            the product b is made by d, because
+                the product b exists, because
+                    there is a product b, because
+                        there is evidence that product b exists.
+                there is evidence of product b being made by d.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                there is no evidence that the product a from maker c at price lowest is acceptable for Seller.
+            there is no evidence that the product b is made by c, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by c, and
+                there is no evidence that there is evidence of product b being made by c, justified above, and
+                there is evidence of product b not being made by c.
+        the product b is of good quality, because
+            there is evidence of b being of good quality.
+    seller accepts selling product b from maker d at price lowest, because
+        the product b from maker d at price lowest is acceptable for Seller, because
+            buyer is subscribed to the mailing list, because
+                there is evidence of buyer being subscribed to the mailing list.
+            buyer pays in cash, because
+                there is evidence of buyer paying in cash.
+            there is no evidence that buyer accepts buying product Var13 not equal a, nor b from maker Var14 not equal c, nor d at price high, because
+                there is no evidence that buyer can buy the product Var13 not equal a, nor b from maker Var14 not equal c, nor d at price high.
+            there is no evidence that buyer accepts buying product Var13 not equal a, nor b from maker c at price high, because
+                there is no evidence that buyer can buy the product Var13 not equal a, nor b from maker c at price high, because
+                    there is no evidence that the product Var13 not equal a, nor b is made by c, because
+                        there is no evidence that the product Var13 not equal a, nor b exists, and
+                        there is no evidence that the product Var13 not equal a, nor b exists.
+                    there is no evidence that the product Var13 not equal a, nor b is made by c, because
+                        there is no evidence that the product Var13 not equal a, nor b exists, and
+                        there is no evidence that the product Var13 not equal a, nor b exists.
+            there is no evidence that buyer accepts buying product Var13 not equal a, nor b from maker d at price high, because
+                there is no evidence that buyer can buy the product Var13 not equal a, nor b from maker d at price high, because
+                    there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                        there is no evidence that the product Var13 not equal a, nor b exists, and
+                        there is no evidence that the product Var13 not equal a, nor b exists.
+            there is no evidence that buyer accepts buying product a from maker Var18 not equal c, nor d at price high, because
+                there is no evidence that buyer can buy the product a from maker Var18 not equal c, nor d at price high.
+            there is no evidence that buyer accepts buying product a from maker c at price high, because
+                there is no evidence that buyer can buy the product a from maker c at price high, because
+                    the product a is made by c, justified above.
+            there is no evidence that buyer accepts buying product a from maker d at price high, because
+                there is no evidence that buyer can buy the product a from maker d at price high, because
+                    there is no evidence that the product a is made by d, because
+                        the product a exists, justified above, and
+                        there is no evidence that there is evidence of product a being made by d, and
+                        there is no evidence that there is evidence of product a being made by d, justified above, and
+                        there is evidence of product a not being made by d.
+            there is no evidence that buyer accepts buying product b from maker Var22 not equal c, nor d at price high, because
+                there is no evidence that buyer can buy the product b from maker Var22 not equal c, nor d at price high.
+            there is no evidence that buyer accepts buying product b from maker c at price high, because
+                there is no evidence that buyer can buy the product b from maker c at price high, because
+                    there is no evidence that the product b is made by c, justified above.
+            there is no evidence that buyer accepts buying product b from maker d at price high, because
+                there is no evidence that buyer can buy the product b from maker d at price high, because
+                    the product b is made by d, justified above.
+            the customer is senior, because
+                buyer is older than 65 years, because
+                    there is evidence of buyer being older than 65 years.
+            there is no evidence that buyer accepts buying product Var26 not equal a, nor b from maker Var27 not equal c, nor d at price low, because
+                there is no evidence that buyer can buy the product Var26 not equal a, nor b from maker Var27 not equal c, nor d at price low.
+            the customer is senior, justified above, and
+            there is no evidence that buyer accepts buying product Var26 not equal a, nor b from maker c at price low, because
+                there is no evidence that buyer can buy the product Var26 not equal a, nor b from maker c at price low, because
+                    there is no evidence that the product Var26 not equal a, nor b is made by c, because
+                        there is no evidence that the product Var26 not equal a, nor b exists, and
+                        there is no evidence that the product Var26 not equal a, nor b exists.
+                    there is no evidence that the product Var26 not equal a, nor b is made by c, because
+                        there is no evidence that the product Var26 not equal a, nor b exists, and
+                        there is no evidence that the product Var26 not equal a, nor b exists.
+            there is no evidence that buyer accepts buying product Var26 not equal a, nor b from maker d at price low, because
+                there is no evidence that buyer can buy the product Var26 not equal a, nor b from maker d at price low, because
+                    there is no evidence that the product Var26 not equal a, nor b is made by d, because
+                        there is no evidence that the product Var26 not equal a, nor b exists, and
+                        there is no evidence that the product Var26 not equal a, nor b exists.
+            there is no evidence that buyer accepts buying product a from maker Var31 not equal c, nor d at price low, because
+                there is no evidence that buyer can buy the product a from maker Var31 not equal c, nor d at price low.
+            there is no evidence that buyer accepts buying product a from maker c at price low, because
+                there is no evidence that buyer can buy the product a from maker c at price low, because
+                    the product a is made by c, justified above, and
+                    the product b is made by d, because
+                        the product b exists, because
+                            there is a product b, justified above.
+                        there is evidence of product b being made by d, justified above.
+                    seller accepts selling product b from maker d at price lowest, because
+                        the product b from maker d at price lowest is acceptable for Seller, because
+                            there is no evidence that the customer is a student, because
+                                there is no evidence that buyer is a student, because
+                                    there is no evidence that there is evidence of buyer being a student, and
+                                    there is no evidence that there is evidence of buyer being a student, justified above, and
+                                    there is evidence of buyer not being a student.
+                            there is no evidence that seller can bargain about the price of product Var37 not equal b, and
+                            seller can bargain about the price of product b, and
+                            buyer pays in cash, justified above, and
+                            there is no evidence that buyer accepts buying product b from maker Var40 not equal c, nor d at price low, because
+                                there is no evidence that buyer can buy the product b from maker Var40 not equal c, nor d at price low.
+                            seller can bargain about the price of product b, justified above, and
+                            there is no evidence that buyer accepts buying product b from maker c at price low, because
+                                there is no evidence that buyer can buy the product b from maker c at price low, because
+                                    there is no evidence that the product b is made by c, justified above.
+                            there is no evidence that buyer accepts buying product b from maker d at price low, because
+                                there is no evidence that buyer can buy the product b from maker d at price low, because
+                                    the product b is made by d, justified above.
+            there is no evidence that buyer accepts buying product a from maker d at price low, because
+                there is no evidence that buyer can buy the product a from maker d at price low, because
+                    there is no evidence that the product a is made by d, justified above.
+            there is no evidence that buyer accepts buying product b from maker Var45 not equal c, nor d at price low, because
+                there is no evidence that buyer can buy the product b from maker Var45 not equal c, nor d at price low.
+            there is no evidence that buyer accepts buying product b from maker c at price low, justified above, and
+            there is no evidence that buyer accepts buying product b from maker d at price low, justified above.
+The global constraints hold.
+
+MODEL:
+{ query(b,d,lowest),  buy(b,d,lowest),  accept_price(b,d,lowest),  maker(b,d),  product(b),  product_b,  evidence(product(b)),  evidence(maker(b,d)),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  evidence(-maker(b,c)),  quality(b),  evidence(quality(b)),  sale(b,d,lowest),  offer_price_b(b,d,lowest),  mail_list,  evidence(mail_list),  cash,  evidence(cash),  evidence(-maker(a,d)),  senior_customer,  age_older_than_65,  evidence(age_older_than_65),  evidence(-student),  bargain(b) }
+BINDINGS: 
+Product equal b 
+Maker equal d 
+Price equal lowest
+
+
+	ANSWER:	2 (in 620.606 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    buyer accepts buying product a from maker c at price low, because
+        buyer can buy the product a from maker c at price low, because
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                there is no evidence that the product a from maker c at price lowest is acceptable for Seller.
+            there is no evidence that the product b is made by c, because
+                the product b exists, because
+                    there is a product b, because
+                        there is evidence that product b exists.
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by c, justified above, and
+                there is evidence of product b not being made by c.
+            there is no evidence that the product Var13 not equal a, nor b is made by d, because
+                there is no evidence that the product Var13 not equal a, nor b exists, and
+                there is no evidence that the product Var13 not equal a, nor b exists.
+            there is no evidence that the product a is made by d, because
+                the product a exists, justified above, and
+                there is no evidence that there is evidence of product a being made by d, and
+                there is no evidence that there is evidence of product a being made by d, justified above, and
+                there is evidence of product a not being made by d.
+            the product b is made by d, because
+                the product b exists, justified above, and
+                there is evidence of product b being made by d.
+            the product b is made by d, justified above, and
+            there is no evidence that seller accepts selling product b from maker d at price lowest, because
+                there is no evidence that the product b from maker d at price lowest is acceptable for Seller, because
+                    buyer is subscribed to the mailing list, because
+                        there is evidence of buyer being subscribed to the mailing list.
+                    buyer pays in cash, because
+                        there is evidence of buyer paying in cash.
+                    there is no evidence that buyer accepts buying product Var23 not equal a, nor b from maker Var24 not equal c, nor d at price high, because
+                        there is no evidence that buyer can buy the product Var23 not equal a, nor b from maker Var24 not equal c, nor d at price high.
+                    there is no evidence that buyer accepts buying product Var23 not equal a, nor b from maker c at price high, because
+                        there is no evidence that buyer can buy the product Var23 not equal a, nor b from maker c at price high, because
+                            there is no evidence that the product Var23 not equal a, nor b is made by c, because
+                                there is no evidence that the product Var23 not equal a, nor b exists, and
+                                there is no evidence that the product Var23 not equal a, nor b exists.
+                            there is no evidence that the product Var23 not equal a, nor b is made by c, because
+                                there is no evidence that the product Var23 not equal a, nor b exists, and
+                                there is no evidence that the product Var23 not equal a, nor b exists.
+                    there is no evidence that buyer accepts buying product Var23 not equal a, nor b from maker d at price high, because
+                        there is no evidence that buyer can buy the product Var23 not equal a, nor b from maker d at price high, because
+                            there is no evidence that the product Var23 not equal a, nor b is made by d, because
+                                there is no evidence that the product Var23 not equal a, nor b exists, and
+                                there is no evidence that the product Var23 not equal a, nor b exists.
+                    there is no evidence that buyer accepts buying product a from maker Var28 not equal c, nor d at price high, because
+                        there is no evidence that buyer can buy the product a from maker Var28 not equal c, nor d at price high.
+                    there is no evidence that buyer accepts buying product a from maker c at price high, because
+                        there is no evidence that buyer can buy the product a from maker c at price high, because
+                            the product a is made by c, justified above.
+                    there is no evidence that buyer accepts buying product a from maker d at price high, because
+                        there is no evidence that buyer can buy the product a from maker d at price high, because
+                            there is no evidence that the product a is made by d, justified above.
+                    there is no evidence that buyer accepts buying product b from maker Var32 not equal c, nor d at price high, because
+                        there is no evidence that buyer can buy the product b from maker Var32 not equal c, nor d at price high.
+                    there is no evidence that buyer accepts buying product b from maker c at price high, because
+                        there is no evidence that buyer can buy the product b from maker c at price high, because
+                            there is no evidence that the product b is made by c, justified above.
+                    there is no evidence that buyer accepts buying product b from maker d at price high, because
+                        there is no evidence that buyer can buy the product b from maker d at price high, because
+                            the product b is made by d, justified above.
+                    the customer is senior, because
+                        buyer is older than 65 years, because
+                            there is evidence of buyer being older than 65 years.
+                    buyer accepts buying product a from maker c at price low, because
+                        buyer can buy the product a from maker c at price low, because
+                            the product a is made by c, because
+                                the product a exists, because
+                                    there is a product a, justified above.
+                                there is evidence of product a being made by c, justified above.
+                        the product a is of good quality, because
+                            there is evidence of a being of good quality.
+        the product a is of good quality, justified above.
+    seller accepts selling product a from maker c at price low, because
+        the product a from maker c at price low is acceptable for Seller.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  buy(a,c,low),  accept_price(a,c,low),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  product(b),  product_b,  evidence(product(b)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  maker(b,d),  evidence(maker(b,d)),  mail_list,  evidence(mail_list),  cash,  evidence(cash),  senior_customer,  age_older_than_65,  evidence(age_older_than_65),  quality(a),  evidence(quality(a)),  sale(a,c,low),  offer_price_a(a,c,low) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+

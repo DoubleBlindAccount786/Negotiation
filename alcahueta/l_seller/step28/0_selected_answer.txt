@@ -1,0 +1,14 @@
+	ANSWER:	1
+
+JUSTIFICATION_TREE:
+not query(b,Maker,lowest) :-
+    evidence(mail_list),
+    evidence(cash),
+    not evidence(-age_older_than_65).
+global_constraint.
+
+MODEL:
+{ evidence(mail_list),  evidence(cash) }
+BINDINGS: 
+Product = b 
+Price = lowest

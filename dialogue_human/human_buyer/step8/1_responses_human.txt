@@ -1,0 +1,35 @@
+% QUERY:I would like to know if
+     the proposal for product Product from maker Maker at price Price is acceptable.
+
+	ANSWER:	1 (in 30.667 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product a from maker c at price low is acceptable, because
+    seller accepts selling product a from maker c at price low, because
+        the product a from maker c at price low is acceptable for Seller, because
+            the customer is senior, because
+                buyer is older than 65 years, because
+                    there is evidence of buyer being older than 65 years.
+            there is no evidence that buyer accepts buying product Var3 not equal a, nor b from maker Var4 at price high, because
+                there is no evidence that there is evidence that product Var3 not equal a, nor b exists.
+            there is no evidence that buyer accepts buying product a from maker Var6 not equal c at price high, because
+                there is evidence that product a exists, and
+                there is no evidence that there is evidence of product a being made by Var6 not equal c.
+            there is no evidence that buyer accepts buying product a from maker c at price high, because
+                there is evidence that product a exists, justified above, and
+                there is evidence of product a being made by c.
+            there is no evidence that buyer accepts buying product b from maker Var9 not equal d at price high, because
+                there is evidence that product b exists, and
+                there is no evidence that there is evidence of product b being made by Var9 not equal d.
+            there is no evidence that buyer accepts buying product b from maker d at price high, because
+                there is evidence that product b exists, justified above, and
+                there is evidence of product b being made by d.
+The global constraints hold.
+
+MODEL:
+{ query(a,c,low),  sale(a,c,low),  offer_price_a(a,c,low),  senior_customer,  age_older_than_65,  evidence(age_older_than_65),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)) }
+BINDINGS: 
+Product equal a 
+Maker equal c 
+Price equal low
+

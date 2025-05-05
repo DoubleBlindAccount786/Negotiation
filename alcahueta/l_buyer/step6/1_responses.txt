@@ -1,0 +1,4 @@
+% QUERY:?- query(Product,Maker,Price).
+
+no models
+

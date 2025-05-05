@@ -1,0 +1,61 @@
+	ANSWER:	3
+
+JUSTIFICATION_TREE:
+query(a,d,lowest) :-
+    buy(a,d,lowest) :-
+        accept_price(a,d,lowest) :-
+            accept_price_2(a,d,lowest) :-
+                maker(a,d) :-
+                    product(a) :-
+                        product_a :-
+                            not evidence(product(a)),
+                            not neg_product_a :-
+                                not evidence(-product(a)),
+                                proved(not evidence(-product(a))),
+                                chs(product_a).
+                    not evidence(maker(a,d)),
+                    not neg_maker(a,d) :-
+                        proved(product(a)),
+                        not evidence(-maker(a,d)),
+                        proved(not evidence(-maker(a,d))),
+                        chs(maker(a,d)).
+            not accept_price_1_check :-
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4 | {Var4 \= c},Var5),
+                not accept_price_1(Var3 | {Var3 \= a,Var3 \= b},c,Var6) :-
+                    not maker(Var3 | {Var3 \= a,Var3 \= b},c) :-
+                        not product(Var3 | {Var3 \= a,Var3 \= b}),
+                        not product(Var3 | {Var3 \= a,Var3 \= b}).
+                not accept_price_1(a,Var7 | {Var7 \= c},Var8),
+                not accept_price_1(a,c,Var9) :-
+                    not maker(a,c) :-
+                        proved(product(a)),
+                        not evidence(maker(a,c)),
+                        proved(not evidence(maker(a,c))),
+                        neg_maker(a,c) :-
+                            not evidence(-maker(a,c)),
+                            chs(not maker(a,c)).
+                not accept_price_1(b,Var10 | {Var10 \= c},Var11),
+                not accept_price_1(b,c,Var12) :-
+                    not maker(b,c) :-
+                        not product(b) :-
+                            not product_b :-
+                                not evidence(product(b)),
+                                proved(not evidence(product(b))),
+                                neg_product_b :-
+                                    not evidence(-product(b)),
+                                    chs(not product_b).
+                        proved(not product(b)).
+        quality(a) :-
+            not evidence(quality(a)),
+            not neg_quality(a) :-
+                not evidence(-quality(a)),
+                proved(not evidence(-quality(a))),
+                chs(quality(a)).
+global_constraint.
+
+MODEL:
+{ query(a,d,lowest),  buy(a,d,lowest),  accept_price(a,d,lowest),  maker(a,d),  product(a),  product_a,  quality(a) }
+BINDINGS: 
+Product = a 
+Maker = d 
+Price = lowest

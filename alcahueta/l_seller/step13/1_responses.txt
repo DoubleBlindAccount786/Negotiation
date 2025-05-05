@@ -1,0 +1,1043 @@
+% QUERY:?- query(Product,Maker,Price).
+
+	ANSWER:	1 (in 43.117 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            not offer_price_5(b,d,lowest) :-
+                not mail_list :-
+                    not evidence(mail_list),
+                    proved(not evidence(mail_list)),
+                    neg_mail_list :-
+                        not evidence(-mail_list),
+                        chs(not mail_list).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_2(a,c,low) :-
+                senior_customer :-
+                    age_older_than_65 :-
+                        not evidence(age_older_than_65),
+                        not neg_age_older_than_65 :-
+                            not evidence(-age_older_than_65),
+                            proved(not evidence(-age_older_than_65)),
+                            chs(age_older_than_65).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  sale(a,c,low),  offer_price_a(a,c,low),  senior_customer,  age_older_than_65 }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	2 (in 37.315 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            not offer_price_5(b,d,lowest) :-
+                not mail_list :-
+                    not evidence(mail_list),
+                    proved(not evidence(mail_list)),
+                    neg_mail_list :-
+                        not evidence(-mail_list),
+                        chs(not mail_list).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_3(a,c,low) :-
+                student_customer :-
+                    student :-
+                        not evidence(student),
+                        not neg_student :-
+                            not evidence(-student),
+                            proved(not evidence(-student)),
+                            chs(student).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  sale(a,c,low),  offer_price_a(a,c,low),  student_customer,  student }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	3 (in 55.12 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            not offer_price_5(b,d,lowest) :-
+                mail_list :-
+                    not evidence(mail_list),
+                    not neg_mail_list :-
+                        not evidence(-mail_list),
+                        proved(not evidence(-mail_list)),
+                        chs(mail_list).
+                not cash :-
+                    not evidence(cash),
+                    proved(not evidence(cash)),
+                    neg_cash :-
+                        not evidence(-cash),
+                        chs(not cash).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_2(a,c,low) :-
+                senior_customer :-
+                    age_older_than_65 :-
+                        not evidence(age_older_than_65),
+                        not neg_age_older_than_65 :-
+                            not evidence(-age_older_than_65),
+                            proved(not evidence(-age_older_than_65)),
+                            chs(age_older_than_65).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  mail_list,  sale(a,c,low),  offer_price_a(a,c,low),  senior_customer,  age_older_than_65 }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	4 (in 46.063 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            not offer_price_5(b,d,lowest) :-
+                mail_list :-
+                    not evidence(mail_list),
+                    not neg_mail_list :-
+                        not evidence(-mail_list),
+                        proved(not evidence(-mail_list)),
+                        chs(mail_list).
+                not cash :-
+                    not evidence(cash),
+                    proved(not evidence(cash)),
+                    neg_cash :-
+                        not evidence(-cash),
+                        chs(not cash).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_3(a,c,low) :-
+                student_customer :-
+                    student :-
+                        not evidence(student),
+                        not neg_student :-
+                            not evidence(-student),
+                            proved(not evidence(-student)),
+                            chs(student).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  mail_list,  sale(a,c,low),  offer_price_a(a,c,low),  student_customer,  student }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	5 (in 106.351 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            offer_price_5(b,d,lowest) :-
+                mail_list :-
+                    not evidence(mail_list),
+                    not neg_mail_list :-
+                        not evidence(-mail_list),
+                        proved(not evidence(-mail_list)),
+                        chs(mail_list).
+                cash :-
+                    not evidence(cash),
+                    not neg_cash :-
+                        not evidence(-cash),
+                        proved(not evidence(-cash)),
+                        chs(cash).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+            offer_price_2_check :-
+                offer_price_2(a,c,low) :-
+                    senior_customer :-
+                        age_older_than_65 :-
+                            not evidence(age_older_than_65),
+                            not neg_age_older_than_65 :-
+                                not evidence(-age_older_than_65),
+                                proved(not evidence(-age_older_than_65)),
+                                chs(age_older_than_65).
+                buy(a,c,low) :-
+                    evidence(product(a)),
+                    evidence(maker(a,c)),
+                    not asked(buy(a,c,low)),
+                    not neg_buy(a,c,low) :-
+                        not asked(-buy(a,c,low)),
+                        proved(evidence(product(a))),
+                        proved(evidence(maker(a,c))),
+                        proved(not asked(-buy(a,c,low))),
+                        chs(buy(a,c,low)).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            proved(offer_price_2(a,c,low)),
+            proved(not offer_price_1_check).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  mail_list,  cash,  senior_customer,  age_older_than_65,  buy(a,c,low),  sale(a,c,low),  offer_price_a(a,c,low) }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	6 (in 14.915 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            offer_price_5(b,d,lowest) :-
+                mail_list :-
+                    not evidence(mail_list),
+                    not neg_mail_list :-
+                        not evidence(-mail_list),
+                        proved(not evidence(-mail_list)),
+                        chs(mail_list).
+                cash :-
+                    not evidence(cash),
+                    not neg_cash :-
+                        not evidence(-cash),
+                        proved(not evidence(-cash)),
+                        chs(cash).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+            offer_price_2_check :-
+                offer_price_2(a,c,low) :-
+                    senior_customer :-
+                        age_older_than_65 :-
+                            not evidence(age_older_than_65),
+                            not neg_age_older_than_65 :-
+                                not evidence(-age_older_than_65),
+                                proved(not evidence(-age_older_than_65)),
+                                chs(age_older_than_65).
+                buy(a,c,low) :-
+                    evidence(product(a)),
+                    evidence(maker(a,c)),
+                    not asked(buy(a,c,low)),
+                    not neg_buy(a,c,low) :-
+                        not asked(-buy(a,c,low)),
+                        proved(evidence(product(a))),
+                        proved(evidence(maker(a,c))),
+                        proved(not asked(-buy(a,c,low))),
+                        chs(buy(a,c,low)).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_3(a,c,low) :-
+                student_customer :-
+                    student :-
+                        not evidence(student),
+                        not neg_student :-
+                            not evidence(-student),
+                            proved(not evidence(-student)),
+                            chs(student).
+            proved(not offer_price_1_check).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  mail_list,  cash,  senior_customer,  age_older_than_65,  buy(a,c,low),  sale(a,c,low),  offer_price_a(a,c,low),  student_customer,  student }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	7 (in 6.205 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            offer_price_5(b,d,lowest) :-
+                mail_list :-
+                    not evidence(mail_list),
+                    not neg_mail_list :-
+                        not evidence(-mail_list),
+                        proved(not evidence(-mail_list)),
+                        chs(mail_list).
+                cash :-
+                    not evidence(cash),
+                    not neg_cash :-
+                        not evidence(-cash),
+                        proved(not evidence(-cash)),
+                        chs(cash).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+            offer_price_2_check :-
+                offer_price_2(b,d,low) :-
+                    senior_customer :-
+                        age_older_than_65 :-
+                            not evidence(age_older_than_65),
+                            not neg_age_older_than_65 :-
+                                not evidence(-age_older_than_65),
+                                proved(not evidence(-age_older_than_65)),
+                                chs(age_older_than_65).
+                buy(b,d,low) :-
+                    evidence(product(b)),
+                    evidence(maker(b,d)),
+                    not asked(buy(b,d,low)),
+                    not neg_buy(b,d,low) :-
+                        not asked(-buy(b,d,low)),
+                        proved(evidence(product(b))),
+                        proved(evidence(maker(b,d))),
+                        proved(not asked(-buy(b,d,low))),
+                        chs(buy(b,d,low)).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_2(a,c,low) :-
+                proved(senior_customer).
+            proved(not offer_price_1_check).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  mail_list,  cash,  senior_customer,  age_older_than_65,  buy(b,d,low),  sale(a,c,low),  offer_price_a(a,c,low) }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	8 (in 15.166 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            offer_price_5(b,d,lowest) :-
+                mail_list :-
+                    not evidence(mail_list),
+                    not neg_mail_list :-
+                        not evidence(-mail_list),
+                        proved(not evidence(-mail_list)),
+                        chs(mail_list).
+                cash :-
+                    not evidence(cash),
+                    not neg_cash :-
+                        not evidence(-cash),
+                        proved(not evidence(-cash)),
+                        chs(cash).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+            offer_price_2_check :-
+                offer_price_2(b,d,low) :-
+                    senior_customer :-
+                        age_older_than_65 :-
+                            not evidence(age_older_than_65),
+                            not neg_age_older_than_65 :-
+                                not evidence(-age_older_than_65),
+                                proved(not evidence(-age_older_than_65)),
+                                chs(age_older_than_65).
+                buy(b,d,low) :-
+                    evidence(product(b)),
+                    evidence(maker(b,d)),
+                    not asked(buy(b,d,low)),
+                    not neg_buy(b,d,low) :-
+                        not asked(-buy(b,d,low)),
+                        proved(evidence(product(b))),
+                        proved(evidence(maker(b,d))),
+                        proved(not asked(-buy(b,d,low))),
+                        chs(buy(b,d,low)).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_3(a,c,low) :-
+                student_customer :-
+                    student :-
+                        not evidence(student),
+                        not neg_student :-
+                            not evidence(-student),
+                            proved(not evidence(-student)),
+                            chs(student).
+            proved(not offer_price_1_check).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  mail_list,  cash,  senior_customer,  age_older_than_65,  buy(b,d,low),  sale(a,c,low),  offer_price_a(a,c,low),  student_customer,  student }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	9 (in 78.91 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            offer_price_5(b,d,lowest) :-
+                mail_list :-
+                    not evidence(mail_list),
+                    not neg_mail_list :-
+                        not evidence(-mail_list),
+                        proved(not evidence(-mail_list)),
+                        chs(mail_list).
+                cash :-
+                    not evidence(cash),
+                    not neg_cash :-
+                        not evidence(-cash),
+                        proved(not evidence(-cash)),
+                        chs(cash).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+            not offer_price_2_check :-
+                not offer_price_2(Var12,Var13,Var14 | {Var14 \= low}),
+                not offer_price_2(Var12,Var13,low) :-
+                    not senior_customer :-
+                        not age_older_than_65 :-
+                            not evidence(age_older_than_65),
+                            proved(not evidence(age_older_than_65)),
+                            neg_age_older_than_65 :-
+                                not evidence(-age_older_than_65),
+                                chs(not age_older_than_65).
+            offer_price_3_check :-
+                offer_price_3(a,c,low) :-
+                    student_customer :-
+                        student :-
+                            not evidence(student),
+                            not neg_student :-
+                                not evidence(-student),
+                                proved(not evidence(-student)),
+                                chs(student).
+                buy(a,c,low) :-
+                    evidence(product(a)),
+                    evidence(maker(a,c)),
+                    not asked(buy(a,c,low)),
+                    not neg_buy(a,c,low) :-
+                        not asked(-buy(a,c,low)),
+                        proved(evidence(product(a))),
+                        proved(evidence(maker(a,c))),
+                        proved(not asked(-buy(a,c,low))),
+                        chs(buy(a,c,low)).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            proved(offer_price_3(a,c,low)),
+            proved(not offer_price_1_check).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  mail_list,  cash,  student_customer,  student,  buy(a,c,low),  sale(a,c,low),  offer_price_a(a,c,low) }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+
+
+	ANSWER:	10 (in 6.673 ms)
+
+JUSTIFICATION_TREE:
+query(a,c,low) :-
+    evidence(product(a)),
+    evidence(maker(a,c)),
+    evidence(product(b)),
+    evidence(maker(b,d)),
+    evidence(-maker(b,c)),
+    evidence(-maker(a,d)),
+    evidence(quality(a)),
+    not sale(a,c,lowest) :-
+        not offer_price_a(a,c,lowest) :-
+            not offer_price_1(a,c,lowest),
+            not offer_price_2(a,c,lowest),
+            not offer_price_3(a,c,lowest),
+            not offer_price_4(a,c,lowest).
+    not sale(b,d,lowest) :-
+        not offer_price_b(b,d,lowest) :-
+            not offer_price_1(b,d,lowest),
+            not offer_price_2(b,d,lowest),
+            not offer_price_3(b,d,lowest),
+            not offer_price_4(b,d,lowest),
+            offer_price_5(b,d,lowest) :-
+                mail_list :-
+                    not evidence(mail_list),
+                    not neg_mail_list :-
+                        not evidence(-mail_list),
+                        proved(not evidence(-mail_list)),
+                        chs(mail_list).
+                cash :-
+                    not evidence(cash),
+                    not neg_cash :-
+                        not evidence(-cash),
+                        proved(not evidence(-cash)),
+                        chs(cash).
+            not offer_price_1_check :-
+                not offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,Var5 | {Var5 \= high}),
+                offer_price_1(Var3 | {Var3 \= a,Var3 \= b},Var4,high),
+                not buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high) :-
+                    not asked(buy(Var3 | {Var3 \= a,Var3 \= b},Var4,high)),
+                    not evidence(product(Var3 | {Var3 \= a,Var3 \= b})).
+                not offer_price_1(a,Var6 | {Var6 \= c},Var7 | {Var7 \= high}),
+                offer_price_1(a,Var6 | {Var6 \= c},high),
+                not buy(a,Var6 | {Var6 \= c},high) :-
+                    not asked(buy(a,Var6 | {Var6 \= c},high)),
+                    proved(evidence(product(a))),
+                    not evidence(maker(a,Var6 | {Var6 \= c})).
+                not offer_price_1(a,c,Var8 | {Var8 \= high}),
+                offer_price_1(a,c,high),
+                not buy(a,c,high) :-
+                    not asked(buy(a,c,high)),
+                    proved(evidence(product(a))),
+                    proved(evidence(maker(a,c))),
+                    proved(not asked(buy(a,c,high))),
+                    neg_buy(a,c,high) :-
+                        not asked(-buy(a,c,high)),
+                        chs(not buy(a,c,high)).
+                not offer_price_1(b,Var9 | {Var9 \= d},Var10 | {Var10 \= high}),
+                offer_price_1(b,Var9 | {Var9 \= d},high),
+                not buy(b,Var9 | {Var9 \= d},high) :-
+                    not asked(buy(b,Var9 | {Var9 \= d},high)),
+                    proved(evidence(product(b))),
+                    not evidence(maker(b,Var9 | {Var9 \= d})).
+                not offer_price_1(b,d,Var11 | {Var11 \= high}),
+                offer_price_1(b,d,high),
+                not buy(b,d,high) :-
+                    not asked(buy(b,d,high)),
+                    proved(evidence(product(b))),
+                    proved(evidence(maker(b,d))),
+                    proved(not asked(buy(b,d,high))),
+                    neg_buy(b,d,high) :-
+                        not asked(-buy(b,d,high)),
+                        chs(not buy(b,d,high)).
+            not offer_price_2_check :-
+                not offer_price_2(Var12,Var13,Var14 | {Var14 \= low}),
+                not offer_price_2(Var12,Var13,low) :-
+                    not senior_customer :-
+                        not age_older_than_65 :-
+                            not evidence(age_older_than_65),
+                            proved(not evidence(age_older_than_65)),
+                            neg_age_older_than_65 :-
+                                not evidence(-age_older_than_65),
+                                chs(not age_older_than_65).
+            offer_price_3_check :-
+                offer_price_3(b,d,low) :-
+                    student_customer :-
+                        student :-
+                            not evidence(student),
+                            not neg_student :-
+                                not evidence(-student),
+                                proved(not evidence(-student)),
+                                chs(student).
+                buy(b,d,low) :-
+                    evidence(product(b)),
+                    evidence(maker(b,d)),
+                    not asked(buy(b,d,low)),
+                    not neg_buy(b,d,low) :-
+                        not asked(-buy(b,d,low)),
+                        proved(evidence(product(b))),
+                        proved(evidence(maker(b,d))),
+                        proved(not asked(-buy(b,d,low))),
+                        chs(buy(b,d,low)).
+    sale(a,c,low) :-
+        offer_price_a(a,c,low) :-
+            offer_price_3(a,c,low) :-
+                proved(student_customer).
+            proved(not offer_price_1_check).
+global_constraint.
+
+MODEL:
+{ query(a,c,low),  evidence(product(a)),  evidence(maker(a,c)),  evidence(product(b)),  evidence(maker(b,d)),  evidence(-maker(b,c)),  evidence(-maker(a,d)),  evidence(quality(a)),  mail_list,  cash,  student_customer,  student,  buy(b,d,low),  sale(a,c,low),  offer_price_a(a,c,low) }
+BINDINGS: 
+Product = a 
+Maker = c 
+Price = low
+

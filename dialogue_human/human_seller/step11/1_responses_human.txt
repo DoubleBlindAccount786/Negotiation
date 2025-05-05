@@ -1,0 +1,94 @@
+% QUERY:I would like to know if
+     the proposal for product Product from maker Maker at price Price is acceptable.
+
+	ANSWER:	1 (in 11.487 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product b from maker d at price lowest is acceptable, because
+    there is evidence of buyer being subscribed to the mailing list, and
+    there is evidence of buyer paying in cash, and
+    buyer accepts buying product b from maker d at price lowest, because
+        buyer can buy the product b from maker d at price lowest, because
+            the product b is made by d, because
+                the product b exists, because
+                    there is a product b, because
+                        there is evidence that product b exists.
+                there is evidence of product b being made by d.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            there is no evidence that the product b is made by c, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by c, and
+                there is no evidence that there is evidence of product b being made by c, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                it is assumed that there is no evidence that the product b is made by c.
+        the product b is of good quality, because
+            there is evidence of b being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(b,d,lowest),  evidence(mail_list),  evidence(cash),  buy(b,d,lowest),  accept_price(b,d,lowest),  maker(b,d),  product(b),  product_b,  evidence(product(b)),  evidence(maker(b,d)),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  quality(b),  evidence(quality(b)) }
+BINDINGS: 
+Product equal b 
+Maker equal d 
+Price equal lowest
+
+
+	ANSWER:	2 (in 10.652 ms)
+
+JUSTIFICATION_TREE:
+the proposal for product b from maker d at price lowest is acceptable, because
+    there is evidence of buyer being subscribed to the mailing list, and
+    there is evidence of buyer paying in cash, and
+    buyer accepts buying product b from maker d at price lowest, because
+        buyer can buy the product b from maker d at price lowest, because
+            the product b is made by d, because
+                the product b exists, because
+                    there is a product b, because
+                        there is evidence that product b exists.
+                there is evidence of product b being made by d.
+            there is no evidence that the product Var3 not equal a, nor b is made by c, because
+                there is no evidence that the product Var3 not equal a, nor b exists, and
+                there is no evidence that the product Var3 not equal a, nor b exists.
+            the product a is made by c, because
+                the product a exists, because
+                    there is a product a, because
+                        there is evidence that product a exists.
+                there is evidence of product a being made by c.
+            the product a is made by c, justified above, and
+            there is no evidence that seller accepts selling product a from maker c at price lowest, because
+                the product a exists, justified above, and
+                the product a is made by c, justified above.
+            the product b is made by c, because
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b being made by c, and
+                the product b exists, justified above, and
+                there is no evidence that there is evidence of product b not being made by c, and
+                there is no evidence that there is evidence of product b not being made by c, justified above, and
+                it is assumed that the product b is made by c.
+            the product b is made by c, justified above, and
+            there is no evidence that seller accepts selling product b from maker c at price lowest, because
+                the product b exists, justified above, and
+                the product b is made by c, justified above, and
+                it is assumed that there is no evidence that seller accepts selling product b from maker c at price lowest.
+        the product b is of good quality, because
+            there is evidence of b being of good quality.
+The global constraints hold.
+
+MODEL:
+{ query(b,d,lowest),  evidence(mail_list),  evidence(cash),  buy(b,d,lowest),  accept_price(b,d,lowest),  maker(b,d),  product(b),  product_b,  evidence(product(b)),  evidence(maker(b,d)),  maker(a,c),  product(a),  product_a,  evidence(product(a)),  evidence(maker(a,c)),  maker(b,c),  quality(b),  evidence(quality(b)) }
+BINDINGS: 
+Product equal b 
+Maker equal d 
+Price equal lowest
+
